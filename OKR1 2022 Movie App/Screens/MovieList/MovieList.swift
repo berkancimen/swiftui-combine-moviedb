@@ -13,8 +13,8 @@ struct MovieList: View {
     
     @StateObject private var viewModel: MovieListViewModel
     
-    init(endPoint: EndPoints) {
-        _viewModel = StateObject(wrappedValue: MovieListViewModel(service: WebServiceFactory.create(), endPoint: endPoint))
+    init(screenName: ScreenNames) {
+        _viewModel = StateObject(wrappedValue: MovieListViewModel(service: WebServiceFactory.create(), screenName: screenName))
     }
     
     var body: some View {
@@ -33,23 +33,29 @@ struct MovieList: View {
                     .zIndex(1)
                 
                 List(viewModel.filteredMovies, id: \.id) { movie in
-                    MovieListCardView(movie: movie).onAppear {
-                        viewModel.shouldLoadMore(movie: movie)
-                    }                    
+                    NavigationLink(destination: MovieDetail(movieId: movie.id)) {
+                        MovieListCardView(movie: movie).onAppear {
+                            viewModel.shouldLoadMore(movie: movie)
+                        }
+                    }
+                    .listRowBackground(Color.clear)
                 }
+                .background(Color.clear)
                 .listStyle(.plain)
                 .listRowSeparator(.hidden)
             }
-        }.task({
+        }
+        .background(Color("37_37_42"))
+        .navigationTitle(viewModel.screenName)
+        .task({
             await viewModel.getMovies()
         })
-        .background(Color("37_37_42"))
     }
     
 }
 
 struct MovieList_Previews: PreviewProvider {
     static var previews: some View {
-        MovieList(endPoint: .topRated)
+        MovieList(screenName: .popular)
     }
 }

@@ -38,8 +38,8 @@ struct HomeView: View {
                     
                     // POPULAR MOVIES
                     VStack(alignment: .leading) {
-                        NavigationLink(destination: MovieList(endPoint: .popular)) {
-                            HomeHeaderView(title: "Popular").padding([.leading, .trailing], 20)
+                        NavigationLink(destination: MovieList(screenName: .popular)) {
+                            HomeHeaderView(title: ScreenNames.popular.description).padding([.leading, .trailing], 20)
                         }
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack (spacing: 15){
@@ -58,8 +58,8 @@ struct HomeView: View {
                     
                     // Trending MOVIES
                     VStack(alignment: .leading) {
-                        NavigationLink(destination: MovieList(endPoint: .trending)) {
-                            HomeHeaderView(title: "Trending").padding([.leading, .trailing], 20)
+                        NavigationLink(destination: MovieList(screenName: .trending)) {
+                            HomeHeaderView(title: ScreenNames.trending.description).padding([.leading, .trailing], 20)
                         }
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack (spacing: 15){
@@ -78,8 +78,8 @@ struct HomeView: View {
                     
                     // Top Rated MOVIES
                     VStack(alignment: .leading) {
-                        NavigationLink(destination: MovieList(endPoint: .topRated)) {
-                            HomeHeaderView(title: "Top Rated").padding([.leading, .trailing], 20)
+                        NavigationLink(destination: MovieList(screenName: .topRated)) {
+                            HomeHeaderView(title: ScreenNames.topRated.description).padding([.leading, .trailing], 20)
                         }
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack (spacing: 15){
@@ -98,7 +98,7 @@ struct HomeView: View {
                     
                 }
                 .background(Color("37_37_42"))
-                .navigationBarTitle("", displayMode: .inline)
+                .navigationBarTitle("Home", displayMode: .inline)
             }.accentColor(.white)
         }
     }

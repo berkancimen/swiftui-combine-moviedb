@@ -21,14 +21,14 @@ struct MovieListCardView: View {
                     .resizable()
                     .indicator(.activity)
                     .transition(.fade(duration: 0.5))
-                    .frame(width: 125, height: 125, alignment: .center)
+                    .frame(width: 100, height: 150, alignment: .center)
                     .background(LinearGradient(gradient: Gradient(colors: [.black, .gray, .white]), startPoint: .bottomTrailing, endPoint: .topLeading))
                     .cornerRadius(20)
                 Text(movie.ratingString)
                     .fontWeight(.bold)
                     .foregroundColor(Color(hue: 0.148, saturation: 0.935, brightness: 0.964))
                     .lineLimit(1)
-                    .padding([.bottom, .trailing], 8)
+                    .padding([.bottom, .trailing, .leading], 8)
             }
             VStack(alignment: .leading) {
                 Text(movie.name)
@@ -54,6 +54,7 @@ struct MovieListCardView: View {
         }
         .listRowBackground(Color.clear)
         .padding([.bottom], 6)
+        .background(Color.clear)
     }
 }
 

@@ -7,10 +7,11 @@
 
 import Foundation
 
-class MovieListViewModel : ObservableObject{
+class MovieListViewModel : ObservableObject {
     
     private var movies: [MovieViewModel] = []
     @Published var filteredMovies: [MovieViewModel] = []
+    @Published var screenName: String = "Movie Detail"
     
     private var service: NetworkService
     private var endPoint: EndPoints
@@ -21,9 +22,10 @@ class MovieListViewModel : ObservableObject{
     
     var filterOptions: (Ratings?, SortType?) = (nil, nil)
     
-    init(service: NetworkService, endPoint: EndPoints) {
+    init(service: NetworkService, screenName: ScreenNames) {
         self.service = service
-        self.endPoint = endPoint
+        self.endPoint = screenName.getEndPoint()
+        self.screenName = screenName.description
     }
     
     func getMovies() async {

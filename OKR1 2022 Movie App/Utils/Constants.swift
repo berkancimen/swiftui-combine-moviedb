@@ -7,12 +7,39 @@
 
 import Foundation
 
+enum ScreenNames: String {
+    
+    case genres = "Genres"
+    case popular = "Popular Movies"
+    case trending = "Trending Movies"
+    case topRated = "Top Rated Movies"
+    
+    func getEndPoint() -> EndPoints {
+        switch self {
+        case .popular:
+            return EndPoints.popular
+        case .trending:
+            return EndPoints.trending
+        case .topRated:
+            return EndPoints.topRated
+        case .genres:
+            return EndPoints.genre
+        }
+    }
+    
+    var description: String {
+        return self.rawValue
+    }
+    
+}
+
 enum EndPoints {
     
     case genre
     case popular
     case trending
     case topRated
+    case movieDetail(Int)
     
     func url(page: Int? = nil) -> String {
         
@@ -29,6 +56,8 @@ enum EndPoints {
             return "\(baseUrl)/trending/movie/week" + apiToken
         case .topRated:
             return "\(baseUrl)/movie/top_rated" + apiToken + paging
+        case .movieDetail(let movieId):
+            return "\(baseUrl)/movie/\(movieId)" + apiToken
         }
     }
 }
