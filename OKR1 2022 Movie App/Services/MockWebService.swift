@@ -6,7 +6,6 @@
 //
 
 import Foundation
-@testable import OKR1_2022_Movie_App
 
 class MockWebService: NetworkService {
     
@@ -25,22 +24,37 @@ class MockWebService: NetworkService {
         return movies
     }
     
+    static func getMockGenres() -> [GenresViewModel] {
+        let genres: [GenresViewModel] = [
+            GenresViewModel(genre: Genre(name: "Action", id: 1)),
+            GenresViewModel(genre: Genre(name: "Comedy", id: 1)),
+            GenresViewModel(genre: Genre(name: "Science", id: 1)),
+        ]
+        return genres
+    }
+    
     func fetchGenres() async throws -> [GenresViewModel] {
-        let genre = Genre(name: "Action", id: 1)
-        let genreViewModel = GenresViewModel(genre: genre)
-        return [genreViewModel]
+        return MockWebService.getMockGenres()
     }
     
     func fetchPopular() async throws -> [MovieViewModel] {
-        let movie = Movie(title: "Movie", id: 1, genre_ids: [1], vote_average: 2.2, poster_path: "")
-        let movieViewModel = MovieViewModel(movie: movie)
-        return [movieViewModel]
+        return MockWebService.getMockMovies()
     }
     
     func fetchTrending() async throws -> [MovieViewModel] {
         return MockWebService.getMockMovies()
     }
     
-    
-    
+    func fetchTopRated() async throws -> [MovieViewModel] {
+        return MockWebService.getMockMovies()
+    }
+        
+    func fetch<T: Decodable>(urlString: String) async throws -> T {
+        guard let url = URL(string: urlString) else {
+            let error = NSError(domain: "No URL", code: 0, userInfo: [:])
+            throw error
+        }
+        let (data, _) = try await URLSession.shared.data(from: url)
+        return try JSONDecoder().decode(T.self, from: data)
+    }
 }

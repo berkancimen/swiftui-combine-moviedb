@@ -7,14 +7,46 @@
 
 import SwiftUI
 
+enum SortType: String, SegmentBindable {
+    
+    case date = "Date"
+    case rating = "Rating"
+    var description: String { "\(self.rawValue)" }
+}
+
+typealias FilterCompletion = (_ sortType: SortType, _ rating: Ratings) -> Void
+
 struct FilterView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+        
+    @State private var selectedSortType: SortType = .date
+    @State private var selectedRatingFilter: Ratings = .none
+    let completion: FilterCompletion
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            // SORT
+            SegmentedView($selectedSortType, title: "Sorting")
+            // RATING FILTER
+            SegmentedView($selectedRatingFilter, title: "Rating")
+            Spacer()
+            Button {} label: {
+                CustomButtonView(completion: {
+                    completion(selectedSortType, selectedRatingFilter)
+                    presentationMode.wrappedValue.dismiss() 
+                }, title: "Filter", backgroundColor: Color.blue, cornerRadius: 12)
+            }.padding()
+            
+        }
     }
 }
 
 struct FilterView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterView()
+        FilterView(completion: { sortType,rating in
+            print("")
+        })
     }
 }

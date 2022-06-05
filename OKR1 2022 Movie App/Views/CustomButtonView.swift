@@ -10,21 +10,23 @@ import SwiftUI
 struct CustomButtonView: View {
     
     let completion: (() -> Void)?
-    let filterName: String
+    let title: String
+    let backgroundColor: Color
+    let cornerRadius: CGFloat
     
     var body: some View {
         Button {
             completion?()
-        } label: { Text(filterName).fontWeight(.semibold) }
+        } label: { Text(title).fontWeight(.semibold) }
         .padding()
         .foregroundColor(.white)
-        .background(Color.blue)
-        .cornerRadius(12)
+        .background(backgroundColor)
+        .cornerRadius(cornerRadius)
     }
 }
 
 struct FilterButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButtonView(completion: nil, filterName: "Gender")
+        CustomButtonView(completion: nil, title: "Gender", backgroundColor: Color.red, cornerRadius: 12)
     }
 }

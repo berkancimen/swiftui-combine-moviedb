@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+class WebServiceFactory {
+    
+    static func create() -> NetworkService {
+        
+        let environment = ProcessInfo.processInfo.environment["ENV"]
+        if let environment = environment, environment == "TEST" {
+            return MockWebService()
+        } else {
+            return Webservice()
+        }
+    }
+    
+}

@@ -8,7 +8,7 @@
 import XCTest
 @testable import OKR1_2022_Movie_App
 
-class OKR1_2022_Movie_Filtering_Tests: XCTestCase {
+class Movie_Filtering_Tests: XCTestCase {
 
     let movies: [MovieViewModel] = MockWebService.getMockMovies()
     let movieFilter = MovieFilter()

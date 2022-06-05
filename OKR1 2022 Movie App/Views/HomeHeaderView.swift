@@ -11,19 +11,22 @@ struct HomeHeaderView: View {
     
     var title : String
     
+    
     var body: some View {
-        Button(action: {
-            print("button tapped")
-        })  {
-            HStack(){
-                Text(title)
-                    .font(.title)
-                    .padding(.leading, 40)
-                    .lineLimit(2)
-                    .foregroundColor(.white)
-                Spacer()
-            }.frame(height : 50)
-        }
+        
+        HStack(){
+            Text(title)
+                .font(.title2)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.leading)
+                .lineLimit(2)
+                .foregroundColor(.white)
+            Spacer()
+            Image("chevronRight")
+                .resizable()
+                .foregroundColor(.white)
+                .frame(width: 10, height: 15)
+        }.frame(height : 50)
     }
 }
 
