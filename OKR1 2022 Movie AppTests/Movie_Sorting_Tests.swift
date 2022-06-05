@@ -1,14 +1,13 @@
 //
-//  OKR1_2022_Movie_AppTests.swift
+//  Movie_Sorting_Tests.swift
 //  OKR1 2022 Movie AppTests
 //
-//  Created by Berkan Cimen on 23.04.2022.
+//  Created by Berkan Cimen on 4.05.2022.
 //
 
 import XCTest
-@testable import OKR1_2022_Movie_App
 
-class OKR1_2022_Movie_AppTests: XCTestCase {
+class Movie_Sorting_Tests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
