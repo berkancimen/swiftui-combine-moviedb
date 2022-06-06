@@ -25,7 +25,7 @@ class MovieListViewModel : ObservableObject {
     init(service: NetworkService, screenName: ScreenNames) {
         self.service = service
         self.endPoint = screenName.getEndPoint()
-        self.screenName = screenName.description
+        self.screenName = screenName.getScreenName()
     }
     
     func getMovies() async {

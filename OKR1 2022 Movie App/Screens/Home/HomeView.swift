@@ -20,11 +20,13 @@ struct HomeView: View {
                     
                     // GENRES
                     VStack(alignment: .leading) {
-                        HomeHeaderView(title: "Genres").padding([.leading, .trailing], 20)
+                        HomeHeaderView(title: "Genres", withArrow: false).padding([.leading, .trailing], 20)
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack (spacing: 15) {
                                 ForEach(viewModel.genres, id: \.genreId) { item in
-                                    HorizontalSliderCardView(nameAndId: (item.genreName, item.genreId))
+                                    NavigationLink(destination: MovieList(screenName: .genre(item.genreName, item.genreId))) {
+                                        HorizontalSliderCardView(nameAndId: (item.genreName, item.genreId))
+                                    }
                                 }
                             }.padding([.leading, .trailing], 20)
                         }.padding([.bottom], 20)
@@ -37,62 +39,16 @@ struct HomeView: View {
                     })
                     
                     // POPULAR MOVIES
-                    VStack(alignment: .leading) {
-                        NavigationLink(destination: MovieList(screenName: .popular)) {
-                            HomeHeaderView(title: ScreenNames.popular.description).padding([.leading, .trailing], 20)
-                        }
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack (spacing: 15){
-                                ForEach(viewModel.popularMovies, id: \.id) { item in
-                                    GridMovieCardView(movie: item)
-                                }
-                            }.padding([.leading, .trailing], 20)
-                        }.padding([.bottom], 20)
-                        Rectangle()
-                            .frame(height: 1, alignment: .center)
-                            .foregroundColor(.gray)
-                            .padding([.leading, .trailing], 120)
-                    }.task({
+                    HorizontalMovieSliderView(movies: $viewModel.popularMovies, sliderType: .popular).task({
                         await viewModel.getPopularMovies()
                     })
-                    
                     // Trending MOVIES
-                    VStack(alignment: .leading) {
-                        NavigationLink(destination: MovieList(screenName: .trending)) {
-                            HomeHeaderView(title: ScreenNames.trending.description).padding([.leading, .trailing], 20)
-                        }
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack (spacing: 15){
-                                ForEach(viewModel.trengingMovies, id: \.id) { item in
-                                    GridMovieCardView(movie: item)
-                                }
-                            }.padding([.leading, .trailing], 20)
-                        }.padding([.bottom], 20)
-                        Rectangle()
-                            .frame(height: 1, alignment: .center)
-                            .foregroundColor(.gray)
-                            .padding([.leading, .trailing], 120)
-                    }.task({
+                    HorizontalMovieSliderView(movies: $viewModel.trengingMovies, sliderType: .trending).task({
                         await viewModel.getTrendingMovies()
                     })
                     
                     // Top Rated MOVIES
-                    VStack(alignment: .leading) {
-                        NavigationLink(destination: MovieList(screenName: .topRated)) {
-                            HomeHeaderView(title: ScreenNames.topRated.description).padding([.leading, .trailing], 20)
-                        }
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack (spacing: 15){
-                                ForEach(viewModel.topRatedMovies, id: \.id) { item in
-                                    GridMovieCardView(movie: item)
-                                }
-                            }.padding([.leading, .trailing], 20)
-                        }.padding([.bottom], 20)
-                        Rectangle()
-                            .frame(height: 1, alignment: .center)
-                            .foregroundColor(.gray)
-                            .padding([.leading, .trailing], 120)
-                    }.task({
+                    HorizontalMovieSliderView(movies: $viewModel.topRatedMovies, sliderType: .topRated).task({
                         await viewModel.getTopRatedMovies()
                     })
                     

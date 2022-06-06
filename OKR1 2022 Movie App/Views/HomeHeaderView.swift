@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeHeaderView: View {
     
     var title : String
-    
+    var withArrow: Bool = true
     
     var body: some View {
         
@@ -22,10 +22,12 @@ struct HomeHeaderView: View {
                 .lineLimit(2)
                 .foregroundColor(.white)
             Spacer()
-            Image("chevronRight")
-                .resizable()
-                .foregroundColor(.white)
-                .frame(width: 10, height: 15)
+            if withArrow {
+                Image("chevronRight")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 10, height: 15)
+            }
         }.frame(height : 50)
     }
 }

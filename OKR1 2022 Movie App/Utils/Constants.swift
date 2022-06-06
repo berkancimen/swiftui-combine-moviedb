@@ -7,12 +7,25 @@
 
 import Foundation
 
-enum ScreenNames: String {
+enum ScreenNames {
     
-    case genres = "Genres"
-    case popular = "Popular Movies"
-    case trending = "Trending Movies"
-    case topRated = "Top Rated Movies"
+    case popular
+    case trending
+    case topRated
+    case genre(String, Int)
+    
+    func getScreenName() -> String {
+        switch self {
+        case .popular:
+            return "Popular Movies"
+        case .trending:
+            return "Trending Movies"
+        case .topRated:
+            return "Top Rated Movies"
+        case .genre(let name, _):
+            return "\(name) Movies"
+        }
+    }
     
     func getEndPoint() -> EndPoints {
         switch self {
@@ -22,13 +35,9 @@ enum ScreenNames: String {
             return EndPoints.trending
         case .topRated:
             return EndPoints.topRated
-        case .genres:
-            return EndPoints.genre
+        case .genre(_, let genreId):
+            return EndPoints.discoverGenre("\(genreId)")
         }
-    }
-    
-    var description: String {
-        return self.rawValue
     }
     
 }
@@ -40,6 +49,7 @@ enum EndPoints {
     case trending
     case topRated
     case movieDetail(Int)
+    case discoverGenre(String)
     
     func url(page: Int? = nil) -> String {
         
@@ -58,6 +68,8 @@ enum EndPoints {
             return "\(baseUrl)/movie/top_rated" + apiToken + paging
         case .movieDetail(let movieId):
             return "\(baseUrl)/movie/\(movieId)" + apiToken
+        case .discoverGenre(let genre):
+            return "\(baseUrl)/discover/movie" + apiToken + paging + "&with_genres=\(genre)"
         }
     }
 }

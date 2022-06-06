@@ -14,7 +14,6 @@ struct MovieListCardView: View {
     
     var body: some View {
         HStack {
-            ZStack(alignment: .bottomTrailing) {
                 WebImage(url: URL(string: movie.imageUrl))
                     .onSuccess { image, data, cacheType in
                     }
@@ -24,12 +23,6 @@ struct MovieListCardView: View {
                     .frame(width: 100, height: 150, alignment: .center)
                     .background(LinearGradient(gradient: Gradient(colors: [.black, .gray, .white]), startPoint: .bottomTrailing, endPoint: .topLeading))
                     .cornerRadius(20)
-                Text(movie.ratingString)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color(hue: 0.148, saturation: 0.935, brightness: 0.964))
-                    .lineLimit(1)
-                    .padding([.bottom, .trailing, .leading], 8)
-            }
             VStack(alignment: .leading) {
                 Text(movie.name)
                     .fontWeight(.bold)
@@ -43,12 +36,20 @@ struct MovieListCardView: View {
                     .multilineTextAlignment(.leading)
                     .lineLimit(4)
                     .padding([.bottom], 2)
-                Text(movie.releaseDate)
-                    .font(.body)
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.gray)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(1)
+                HStack {
+                    Text(movie.releaseDate)
+                        .font(.body)
+                        .fontWeight(.regular)
+                        .foregroundColor(Color.gray)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(1)
+                    Spacer()
+                    Text(movie.ratingString)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(hue: 0.148, saturation: 0.935, brightness: 0.964))
+                        .lineLimit(1)
+                        .padding([.bottom, .leading], 8)
+                }
             }
             Spacer()
         }
