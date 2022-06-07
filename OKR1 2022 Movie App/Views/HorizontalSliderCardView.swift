@@ -11,11 +11,12 @@ struct HorizontalSliderCardView: View {
     
     let nameAndId : (String, Int)
     var cardColor : Color = Color.generateRandomColor()
+    var frame: (width: CGFloat, height: CGFloat) = (width: 140, height: 60)
     
     var body: some View {
             ZStack{
                 Rectangle()
-                    .frame(width: 140, height: 60)
+                    .frame(width: frame.0, height: frame.1)
                     .foregroundColor(cardColor)
                     .background(LinearGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing))
                     .cornerRadius(20)
@@ -23,10 +24,11 @@ struct HorizontalSliderCardView: View {
                     .aspectRatio(contentMode: .fill)
                 VStack (alignment: .center) {
                     Text(nameAndId.0)
-                        .fontWeight(.semibold)
+                        .fontWeight(.bold)
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
                         .padding(10)
+                        .lineLimit(1)
                 }
             }
         }

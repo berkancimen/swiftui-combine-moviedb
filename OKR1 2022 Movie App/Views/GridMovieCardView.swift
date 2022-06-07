@@ -22,15 +22,16 @@ struct GridMovieCardView: View {
                 .resizable()
                 .indicator(.activity)
                 .transition(.fade(duration: 0.5))
-                .frame(width: 150, height: 150, alignment: .center)
+                .frame(width: 130, height: 130, alignment: .center)
                 .background(LinearGradient(gradient: Gradient(colors: [.black, .gray, .white]), startPoint: .topLeading, endPoint: .bottomTrailing))
                 .cornerRadius(20)
             Text(movie.name)
-                .fontWeight(.medium)
+                .font(.footnote)
+                .fontWeight(.bold)
                 .foregroundColor(Color.white)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
-                .frame(maxWidth: 150)
+                .frame(maxWidth: 130)
         }
     }
 }

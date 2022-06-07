@@ -24,6 +24,7 @@ class MovieDetailModel: Decodable {
     var status, tagline, title: String?
     var vote_average: Double?
     var vote_count: Int?
+    var runtime: Int?
 }
 
 // MARK: - ProductionCompany
@@ -84,6 +85,19 @@ struct MovieDetailModelViewModel {
     
     var originalLanguage: String? {
         movie.original_language
+    }
+    
+    var revenue: String {
+        guard let revenue = movie.revenue as NSNumber?, revenue != 0 else {return "N/A"}
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        return formatter.string(from: revenue) ?? "N/A"
+    }
+    
+    var duration: String {
+        "\(movie.runtime ?? 0) minutes"
     }
     
     static var `default`: MovieDetailModelViewModel {

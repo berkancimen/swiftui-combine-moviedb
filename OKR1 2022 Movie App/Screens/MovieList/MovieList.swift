@@ -21,6 +21,7 @@ struct MovieList: View {
         
         VStack {
             ZStack(alignment: .bottomTrailing) {
+                
                 CustomButtonView(completion: {
                     showSheet.toggle()
                 }, title: "Filter", backgroundColor: .blue, cornerRadius: 12)

@@ -28,7 +28,7 @@ struct HorizontalMovieSliderView: View {
                             }.scaleEffect(.init(width: scale, height: scale))
                                 .animation(.easeOut, value: 0.5)
                             
-                        }.frame(width: 150, height: 200)
+                        }.frame(width: 130, height: 200)
                             .padding(.horizontal, 8)
                             .padding(.top, 26)
                             
@@ -43,12 +43,12 @@ struct HorizontalMovieSliderView: View {
     }
     
     func getScale(proxy: GeometryProxy) -> CGFloat {
-            let midPoint: CGFloat = 150
+            let midPoint: CGFloat = 130
              
             let viewFrame = proxy.frame(in: CoordinateSpace.global)
              
             var scale: CGFloat = 1.0
-            let deltaXAnimationThreshold: CGFloat = 150
+            let deltaXAnimationThreshold: CGFloat = 130
              
             let diffFromCenter = abs(midPoint - viewFrame.origin.x - deltaXAnimationThreshold / 2)
             if diffFromCenter < deltaXAnimationThreshold {

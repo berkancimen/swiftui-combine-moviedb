@@ -36,7 +36,7 @@ struct MovieListCardView: View {
                     .multilineTextAlignment(.leading)
                     .lineLimit(4)
                     .padding([.bottom], 2)
-                HStack {
+                HStack(spacing: 0) {
                     Text(movie.releaseDate)
                         .font(.body)
                         .fontWeight(.regular)
@@ -44,11 +44,14 @@ struct MovieListCardView: View {
                         .multilineTextAlignment(.leading)
                         .lineLimit(1)
                     Spacer()
+                    Image("starIcon")
+                        .frame(width: 30, height: 30)
                     Text(movie.ratingString)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(hue: 0.148, saturation: 0.935, brightness: 0.964))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color(red: 1.0, green: 0.757, blue: 0.027))
                         .lineLimit(1)
-                        .padding([.bottom, .leading], 8)
+                        .frame(width: 30, height: 30)
+                        
                 }
             }
             Spacer()
