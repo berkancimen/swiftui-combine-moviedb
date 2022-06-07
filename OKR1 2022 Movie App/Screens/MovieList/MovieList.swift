@@ -33,12 +33,14 @@ struct MovieList: View {
                     .zIndex(1)
                 
                 List(viewModel.filteredMovies, id: \.id) { movie in
-                    NavigationLink(destination: MovieDetail(movieId: movie.id)) {
+                    ZStack {
                         MovieListCardView(movie: movie).onAppear {
                             viewModel.shouldLoadMore(movie: movie)
                         }
-                    }
-                    .listRowBackground(Color.clear)
+                        NavigationLink(destination: MovieDetail(movieId: movie.id)) {
+                            EmptyView()
+                        }.opacity(0.0)
+                    }.listRowBackground(Color.clear)
                 }
                 .background(Color.clear)
                 .listStyle(.plain)

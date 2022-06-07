@@ -21,9 +21,17 @@ struct HorizontalMovieSliderView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack (spacing: 15){
                     ForEach(movies, id: \.id) { item in
-                        NavigationLink(destination: MovieDetail(movieId: item.id)) {
-                            GridMovieCardView(movie: item)
-                        }
+                        GeometryReader { proxy in
+                            let scale = getScale(proxy: proxy)
+                            NavigationLink(destination: MovieDetail(movieId: item.id)) {
+                                GridMovieCardView(movie: item)
+                            }.scaleEffect(.init(width: scale, height: scale))
+                                .animation(.easeOut, value: 0.5)
+                            
+                        }.frame(width: 150, height: 200)
+                            .padding(.horizontal, 8)
+                            .padding(.top, 26)
+                            
                     }
                 }.padding([.leading, .trailing], 20)
             }.padding([.bottom], 20)
@@ -33,6 +41,23 @@ struct HorizontalMovieSliderView: View {
                 .padding([.leading, .trailing], 120)
         }
     }
+    
+    func getScale(proxy: GeometryProxy) -> CGFloat {
+            let midPoint: CGFloat = 150
+             
+            let viewFrame = proxy.frame(in: CoordinateSpace.global)
+             
+            var scale: CGFloat = 1.0
+            let deltaXAnimationThreshold: CGFloat = 150
+             
+            let diffFromCenter = abs(midPoint - viewFrame.origin.x - deltaXAnimationThreshold / 2)
+            if diffFromCenter < deltaXAnimationThreshold {
+                scale = 1 + (deltaXAnimationThreshold - diffFromCenter) / 500
+            }
+             
+            return scale
+        }
+    
 }
 
 //struct HorizontalMovieSliderView_Previews: PreviewProvider {
