@@ -39,9 +39,6 @@ class MovieRatingSpecification: Specification {
     }
     
     func isSatisfied(_ item: MovieViewModel) -> Bool {
-        if ratingEnum == .none {
-            return true
-        }
         return item.ratingEnum == ratingEnum
     }
 }

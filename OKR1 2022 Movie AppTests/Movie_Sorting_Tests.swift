@@ -10,10 +10,19 @@ import XCTest
 
 class Movie_Sorting_Tests: XCTestCase {
     
-    let movies: [MovieViewModel] = MockWebService.getMockMovies()
+    let mockService: NetworkService = WebServiceFactory.create()
     let sorting = MovieSort()
 
-    func test_sorting_movies_with_rating() {
+    func test_sorting_movies_with_rating() async {
+        
+        var movies: [MovieViewModel] = []
+        do {
+            if let mockMovies = await getMockMovies() {
+                movies = mockMovies
+            } else {
+                XCTFail()
+            }
+        }
         
         let sortedMovies = sorting.sort({$0.rating}, movies)
         
@@ -24,7 +33,16 @@ class Movie_Sorting_Tests: XCTestCase {
         }
     }
     
-    func test_sorting_movies_with_id() {
+    func test_sorting_movies_with_id() async {
+        
+        var movies: [MovieViewModel] = []
+        do {
+            if let mockMovies = await getMockMovies() {
+                movies = mockMovies
+            } else {
+                XCTFail()
+            }
+        }
         
         let sortedMovies = sorting.sort({$0.id}, movies)
         
@@ -35,5 +53,15 @@ class Movie_Sorting_Tests: XCTestCase {
         }
     }
 
+    func getMockMovies() async -> [MovieViewModel]? {
+        do {
+            let response: MovieResponse = try await mockService.fetch(url: EndPoints.popular, page: nil)
+            let items = response.results
+            return items.map(MovieViewModel.init)
+        } catch {
+            return nil
+        }
+        
+    }
 
 }

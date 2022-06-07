@@ -9,12 +9,14 @@ import Foundation
 
 protocol NetworkService {
     
-    func fetch<T: Decodable>(urlString: String) async throws -> T
+    func fetch<T: Decodable>(url: EndPoints, page: Int?) async throws -> T
 }
 
 class Webservice: NetworkService {
     
-    func fetch<T: Decodable>(urlString: String) async throws -> T {
+    func fetch<T: Decodable>(url: EndPoints, page: Int? = nil) async throws -> T {
+        
+        let urlString = url.url(page: page)
         guard let url = URL(string: urlString) else {
             let error = NSError(domain: "No URL", code: 0, userInfo: [:])
             throw error

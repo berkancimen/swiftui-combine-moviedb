@@ -14,6 +14,8 @@ class WebServiceFactory {
         let environment = ProcessInfo.processInfo.environment["ENV"]
         if let environment = environment, environment == "TEST" {
             return MockWebService()
+        } else if Thread.current.isRunningXCTest {
+            return MockWebService()
         } else {
             return Webservice()
         }

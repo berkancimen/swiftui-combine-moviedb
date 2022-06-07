@@ -21,7 +21,7 @@ class MovieDetailViewModel: ObservableObject {
     
     func getMovieDetail() async {
         do {
-            let response: MovieDetailModel = try await service.fetch(urlString: EndPoints.movieDetail(movieId).url())
+            let response: MovieDetailModel = try await service.fetch(url: EndPoints.movieDetail(movieId), page: nil)
             DispatchQueue.main.async {
                 self.movieDetail = MovieDetailModelViewModel(movie: response)
             }

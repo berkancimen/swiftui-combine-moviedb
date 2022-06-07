@@ -23,7 +23,7 @@ class ViewModelHome : ObservableObject{
         
     func getGenres() async {
         do {
-            let response: GenreResponse = try await service.fetch(urlString: EndPoints.genre.url())
+            let response: GenreResponse = try await service.fetch(url: EndPoints.genre, page: nil)
             let items = response.genres
             self.genres = items.map(GenresViewModel.init)
         } catch {
@@ -33,7 +33,7 @@ class ViewModelHome : ObservableObject{
     
     func getPopularMovies() async {
         do {
-            let response: MovieResponse = try await service.fetch(urlString: EndPoints.popular.url())
+            let response: MovieResponse = try await service.fetch(url: EndPoints.popular, page: nil)
             let items = response.results
             self.popularMovies = items.map(MovieViewModel.init)
         } catch {
@@ -43,7 +43,7 @@ class ViewModelHome : ObservableObject{
     
     func getTrendingMovies() async {
         do {
-            let response: MovieResponse = try await service.fetch(urlString: EndPoints.trending.url())
+            let response: MovieResponse = try await service.fetch(url: EndPoints.trending, page: nil)
             let items = response.results
             self.trengingMovies = items.map(MovieViewModel.init)
         } catch {
@@ -53,7 +53,7 @@ class ViewModelHome : ObservableObject{
     
     func getTopRatedMovies() async {
         do {
-            let response: MovieResponse = try await service.fetch(urlString: EndPoints.topRated.url())
+            let response: MovieResponse = try await service.fetch(url: EndPoints.topRated, page: nil)
             let items = response.results
             self.topRatedMovies = items.map(MovieViewModel.init)
         } catch {

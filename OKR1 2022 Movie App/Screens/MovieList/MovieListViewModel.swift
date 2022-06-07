@@ -30,7 +30,7 @@ class MovieListViewModel : ObservableObject {
     
     func getMovies() async {
         do {
-            let response: MovieResponse = try await service.fetch(urlString: self.endPoint.url(page: pageNumber))
+            let response: MovieResponse = try await service.fetch(url: self.endPoint, page: pageNumber)
             let items = response.results
             DispatchQueue.main.async {
                 self.movies.append(contentsOf: items.map(MovieViewModel.init))
@@ -54,9 +54,11 @@ class MovieListViewModel : ObservableObject {
     
     func filterMovie(rating: Ratings? = Ratings.none, sort: SortType? = nil) {
         
-        if let rating = rating {
+        if let rating = rating, rating != .none {
             filteredMovies = movieFilter.filter(movies, MovieRatingSpecification(ratingEnum: rating))
             filterOptions.0 = rating
+        } else {
+            filteredMovies = movies
         }
         
         if let sort = sort {

@@ -71,49 +71,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5EE03691-4FC9-439A-8461-71791F734087"
+            uuid = "2759CBFD-8C37-4463-87D8-791C9C78286E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OKR1 2022 Movie App/Screens/MovieList/MovieListViewModel.swift"
+            filePath = "OKR1 2022 Movie AppTests/Movie_Filtering_Tests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "getMovies()"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "test_filtering_movie_with_rating_none()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BBD8538A-28E7-415F-A00C-AAC7DD34E6A6"
+            uuid = "363C539B-9CB7-4EB7-8474-0F708AC537B3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OKR1 2022 Movie App/Screens/MovieList/MovieListViewModel.swift"
+            filePath = "OKR1 2022 Movie AppTests/Movie_Filtering_Tests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "getMovies()"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "test_filtering_movie_with_rating_none()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3F79FFFC-07B8-4526-A6C9-4D83E29C15A3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OKR1 2022 Movie App/Models/MovieDetailModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "revenue"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

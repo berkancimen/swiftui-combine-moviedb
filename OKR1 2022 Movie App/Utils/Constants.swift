@@ -73,3 +73,14 @@ enum EndPoints {
         }
     }
 }
+
+
+extension Thread {
+    var isRunningXCTest: Bool {
+      threadDictionary.allKeys
+        .contains {
+          ($0 as? String)?
+            .range(of: "XCTest", options: .caseInsensitive) != nil
+        }
+      }
+  }
