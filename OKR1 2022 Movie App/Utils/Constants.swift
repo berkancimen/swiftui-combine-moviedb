@@ -50,6 +50,7 @@ enum EndPoints {
     case topRated
     case movieDetail(Int)
     case discoverGenre(String)
+    case search(String)
     
     func url(page: Int? = nil) -> String {
         
@@ -70,6 +71,8 @@ enum EndPoints {
             return "\(baseUrl)/movie/\(movieId)" + apiToken
         case .discoverGenre(let genre):
             return "\(baseUrl)/discover/movie" + apiToken + paging + "&with_genres=\(genre)"
+        case .search(let searchText):
+            return "\(baseUrl)/search/movie" + apiToken + paging + "&query=\(searchText)"
         }
     }
 }

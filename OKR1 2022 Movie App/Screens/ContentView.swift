@@ -35,7 +35,7 @@ struct ContentView: View {
                     barItem: UITabBarItem(title: "", image: UIImage(named: "barHome"), selectedImage: UIImage(named: "barHomeSelect"))
                 ),
                 UIKitTabView.Tab(
-                    view: Text("Search"),
+                    view: SearchView(),
                     barItem: UITabBarItem(title: "", image: UIImage(named: "barSearch"), selectedImage: UIImage(named: "barSearchSelect"))
                 )
             ])

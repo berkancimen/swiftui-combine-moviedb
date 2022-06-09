@@ -26,7 +26,7 @@ struct Movie: Decodable {
     var id: Int
     var genre_ids: [Int]
     var vote_average: Double
-    var poster_path: String
+    var poster_path: String?
     var overview: String?
     var release_date: String?
 }
@@ -65,7 +65,7 @@ struct MovieViewModel {
     }
     
     var imageUrl: String {
-        return "https://image.tmdb.org/t/p/w500" + movie.poster_path
+        return "https://image.tmdb.org/t/p/w500" + (movie.poster_path ?? "")
     }
     
     var overview: String {
