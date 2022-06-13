@@ -11,45 +11,38 @@ struct MovieList: View {
     
     @State private var showSheet = false
     
-    @StateObject private var viewModel: MovieListViewModel
+    @ObservedObject private var viewModel: MovieListViewModel
     
     init(screenName: ScreenNames) {
-        _viewModel = StateObject(wrappedValue: MovieListViewModel(service: WebServiceFactory.create(), screenName: screenName))
+        _viewModel = ObservedObject(wrappedValue: MovieListViewModel(service: WebServiceFactory.create(), screenName: screenName))
     }
     
     var body: some View {
         
         VStack {
-            ZStack(alignment: .bottomTrailing) {
-                
-                CustomButtonView(completion: {
-                    showSheet.toggle()
-                }, title: "Filter", backgroundColor: .blue, cornerRadius: 12)
-                    .frame(height: 40)
-                    .fullScreenCover(isPresented: $showSheet) {
-                        FilterView(completion: { (sortType,rating) in
-                            viewModel.filterMovie(rating: rating, sort: sortType)
-                        })
-                    }.padding()
-                    .zIndex(1)
-                
-                List(viewModel.filteredMovies, id: \.id) { movie in
-                    ZStack {
-                        MovieListCardView(movie: movie).onAppear {
-                            viewModel.shouldLoadMore(movie: movie)
-                        }
-                        NavigationLink(destination: MovieDetail(movieId: movie.id)) {
-                            EmptyView()
-                        }.opacity(0.0)
-                    }.listRowBackground(Color.clear)
-                }
-                .background(Color.clear)
-                .listStyle(.plain)
-                .listRowSeparator(.hidden)
+            MovieListView(movies: $viewModel.filteredMovies) { movie in
+                viewModel.shouldLoadMore(movie: movie)
             }
         }
         .background(Color("37_37_42"))
         .navigationTitle(viewModel.screenName)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                
+                Button {
+                    showSheet.toggle()
+                } label: {
+                    Image(systemName: "line.3.horizontal.decrease.circle")
+                }.fullScreenCover(isPresented: $showSheet) {
+                    FilterView(selectedSortType: viewModel.filterOptions.1 ?? .date, selectedRatingFilter: viewModel.filterOptions.0 ?? .none) { sortType, rating in
+                        viewModel.filterMovie(rating: rating, sort: sortType)
+                    }
+//                    FilterView(completion: { (sortType,rating) in
+//                        viewModel.filterMovie(rating: rating, sort: sortType)
+//                    })
+                }
+            }
+        }
         .task({
             await viewModel.getMovies()
         })

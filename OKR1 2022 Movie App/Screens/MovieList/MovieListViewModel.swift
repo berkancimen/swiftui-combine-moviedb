@@ -59,10 +59,16 @@ class MovieListViewModel : ObservableObject {
             filterOptions.0 = rating
         } else {
             filteredMovies = movies
+            filterOptions.0 = Ratings.none
         }
         
         if let sort = sort {
-            filteredMovies = sorting.sort({$0.rating}, filteredMovies)
+            switch sort {
+            case .date:
+                filteredMovies = sorting.sort({$0.releaseDate}, filteredMovies)
+            case .rating:
+                filteredMovies = sorting.sort({$0.rating}, filteredMovies)
+            }
             filterOptions.1 = sort
         }
         

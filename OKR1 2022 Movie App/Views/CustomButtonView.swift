@@ -11,15 +11,26 @@ struct CustomButtonView: View {
     
     let completion: (() -> Void)?
     let title: String
+    let titleColor: Color = .white
     let backgroundColor: Color
     let cornerRadius: CGFloat
+    let height: CGFloat = 10
+    @Binding var isAnimating: Bool
     
     var body: some View {
         Button {
             completion?()
-        } label: { Text(title).fontWeight(.semibold) }
+        } label: {
+            if isAnimating {
+                ActivityIndicator(isAnimating: $isAnimating, style: .medium)
+                    .frame(height: height)
+            } else {
+                Text(title).fontWeight(.semibold)
+                    .frame(height: height)
+            }
+        }
         .padding()
-        .foregroundColor(.white)
+        .foregroundColor(titleColor)
         .background(backgroundColor)
         .cornerRadius(cornerRadius)
     }
@@ -27,6 +38,6 @@ struct CustomButtonView: View {
 
 struct FilterButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButtonView(completion: nil, title: "Gender", backgroundColor: Color.red, cornerRadius: 12)
+        CustomButtonView(completion: nil, title: "Gender", backgroundColor: Color.red, cornerRadius: 12, isAnimating: .constant(true))
     }
 }

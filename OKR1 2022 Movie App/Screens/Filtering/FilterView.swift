@@ -20,26 +20,36 @@ struct FilterView: View {
     
     @Environment(\.presentationMode) var presentationMode
         
-    @State private var selectedSortType: SortType = .date
-    @State private var selectedRatingFilter: Ratings = .none
+    @State var selectedSortType: SortType = .date
+    @State var selectedRatingFilter: Ratings = .none
     let completion: FilterCompletion
     
     var body: some View {
         
         VStack {
+            HStack {
+                Spacer()
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "xmark.circle")
+                        .font(.system(size: 25))
+                        .foregroundColor(.white)
+                }.padding(.trailing, 20)
+            }
+            
             // SORT
-            SegmentedView($selectedSortType, title: "Sorting")
+            SegmentedView($selectedSortType, title: "Sort:")
             // RATING FILTER
-            SegmentedView($selectedRatingFilter, title: "Rating")
+            SegmentedView($selectedRatingFilter, title: "Rate:")
             Spacer()
             Button {} label: {
                 CustomButtonView(completion: {
                     completion(selectedSortType, selectedRatingFilter)
                     presentationMode.wrappedValue.dismiss() 
-                }, title: "Filter", backgroundColor: Color.blue, cornerRadius: 12)
+                }, title: "Apply", backgroundColor: Color.green, cornerRadius: 12, isAnimating: .constant(false))
             }.padding()
-            
-        }
+        }.background(Color("37_37_42"))
     }
 }
 

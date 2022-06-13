@@ -50,7 +50,7 @@ struct MovieListCardView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(Color(red: 1.0, green: 0.757, blue: 0.027))
                         .lineLimit(1)
-                        .frame(width: 30, height: 30)
+                        .frame(height: 30)
                         
                 }
             }

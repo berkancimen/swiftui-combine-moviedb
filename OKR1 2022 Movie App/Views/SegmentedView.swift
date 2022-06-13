@@ -19,31 +19,38 @@ struct SegmentedView<T>: View where T: SegmentBindable {
         self.title = title
         self._value = binding
         segments = T.allCases as! Array<T>
+        UISegmentedControl.appearance().selectedSegmentTintColor = .darkGray
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
     }
 
     var body: some View {
-        HStack() {
-            Text(title)
-                .font(.headline)
-                .multilineTextAlignment(.center)
-                .padding()
-            Spacer()
-        }
-        .padding([.top], 1)
-        Divider()
-        Picker(selection: $value, label: Text("")) {
-            ForEach(segments, id: \.self) { Text($0.description)
+        VStack {
+            HStack(spacing: 0) {
+                Text(title)
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                    .foregroundColor(.white)
+                Picker(selection: $value, label: Text("")) {
+                    ForEach(segments, id: \.self) { Text($0.description)
+                    }
+                }
+                .background(Color.clear)
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.vertical)
+                .padding(.trailing)
+                Spacer()
             }
-        }
-        .pickerStyle(SegmentedPickerStyle())
-        .padding([.leading, .trailing], 80)
-        .padding([.top], 6)
+            Divider()
+                .background(Color.gray)
+                .padding(.horizontal)
+        }.background(Color("37_37_42"))
     }
 }
 
-//struct SegmentedFilterView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        @State private var sortType: SortType = .rating
-//        SegmentedFilterView(<#Binding<_>#>, title: <#String#>)
-//    }
-//}
+struct SegmentedView_Previews: PreviewProvider {
+    static var previews: some View {
+        SegmentedView(.constant(SortType.date), title: "Sorting:")
+    }
+}

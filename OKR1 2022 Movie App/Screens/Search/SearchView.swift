@@ -9,50 +9,54 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @StateObject private var viewModel = SearchViewModel(service: WebServiceFactory.create())
+    @ObservedObject private var viewModel = SearchViewModel(service: WebServiceFactory.create())
     @State var textFieldText: String = ""
-    
     
     var body: some View {
         
         GeometryReader { g in
             NavigationView {
                 VStack {
-                    TextField("Search", text: $textFieldText)
-                        .onChange(of: textFieldText) {
-                            if $0.count > 3 {
-                                viewModel.getMovies($0)
-                            }
-                        }
-                        .frame(height: 40)
-                        .padding(.horizontal, 15)
-                        .accentColor(.white)
-                        .modifier(PlaceholderStyle(showPlaceHolder: textFieldText.isEmpty, placeholder: "Search movie"))
-                        .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.gray, lineWidth: 1)
-                            )
-                        .padding(.horizontal)
-                        .padding(.top, 5)
-                    Spacer()
-                    List(viewModel.filteredMovies, id: \.id) { movie in
-                        ZStack {
-                            MovieListCardView(movie: movie).onAppear {
-                                viewModel.shouldLoadMore(movie: movie)
-                            }
-                            NavigationLink(destination: MovieDetail(movieId: movie.id)) {
-                                EmptyView()
-                            }.opacity(0.0)
-                        }.listRowBackground(Color.clear)
+                    HStack(spacing: 10) {
+                        SearchTextField(textFieldText: $textFieldText)
+                        CustomButtonView(completion: {
+                            viewModel.getMovies(textFieldText)
+                        }, title: "Search", backgroundColor: .gray, cornerRadius: 12, isAnimating: self.$viewModel.activityIndAnimating)
+                            .padding(.trailing, 8)
                     }
-                    .background(Color.clear)
-                    .listStyle(.plain)
-                    .listRowSeparator(.hidden)
+                    Spacer()
+                    MovieListView(movies: $viewModel.filteredMovies) { movie in
+                        viewModel.shouldLoadMore(movie: movie)
+                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("37_37_42"))
                 .navigationBarTitle("Search", displayMode: .inline)
             }.accentColor(.white)
+        }
+    }
+    
+    struct SearchTextField: View {
+        
+        @Binding var textFieldText: String
+        
+        var body: some View {
+            TextField("Search", text: $textFieldText)
+//                .onChange(of: textFieldText) {
+//                    if $0.count > 3 {
+//                        viewModel.getMovies($0)
+//                    }
+//                }
+                .frame(height: 40)
+                .padding(.horizontal, 15)
+                .accentColor(.white)
+                .modifier(PlaceholderStyle(showPlaceHolder: textFieldText.isEmpty, placeholder: "Search movie"))
+                .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
+                .padding(.leading)
+                .padding(.top, 5)
         }
     }
 }
