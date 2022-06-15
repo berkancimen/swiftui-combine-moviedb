@@ -21,7 +21,7 @@ class Movie_Filtering_Tests: XCTestCase {
             if let mockMovies = await getMockMovies() {
                 movies = mockMovies
             } else {
-                XCTFail()
+                XCTFail("json parsing failed")
             }
         }
 
@@ -58,7 +58,7 @@ class Movie_Filtering_Tests: XCTestCase {
             if let mockMovies = await getMockMovies() {
                 movies = mockMovies
             } else {
-                XCTFail()
+                XCTFail("json parsing failed")
             }
         }
                         
@@ -74,7 +74,7 @@ class Movie_Filtering_Tests: XCTestCase {
             if let mockMovies = await getMockMovies() {
                 movies = mockMovies
             } else {
-                XCTFail()
+                XCTFail("json parsing failed")
             }
         }
 
@@ -95,7 +95,7 @@ class Movie_Filtering_Tests: XCTestCase {
             if let mockMovies = await getMockMovies() {
                 movies = mockMovies
             } else {
-                XCTFail()
+                XCTFail("json parsing failed")
             }
         }
 
@@ -111,7 +111,7 @@ class Movie_Filtering_Tests: XCTestCase {
             if let mockMovies = await getMockMovies() {
                 movies = mockMovies
             } else {
-                XCTFail()
+                XCTFail("json parsing failed")
             }
         }
 
@@ -126,7 +126,7 @@ class Movie_Filtering_Tests: XCTestCase {
             if let mockMovies = await getMockMovies() {
                 movies = mockMovies
             } else {
-                XCTFail()
+                XCTFail("json parsing failed")
             }
         }
 
