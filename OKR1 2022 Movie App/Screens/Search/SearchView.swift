@@ -21,7 +21,7 @@ struct SearchView: View {
                         SearchTextField(textFieldText: $textFieldText)
                         CustomButtonView(completion: {
                             viewModel.getMovies(textFieldText)
-                        }, title: "Search", backgroundColor: .gray, cornerRadius: 12, isAnimating: self.$viewModel.activityIndAnimating)
+                        }, title: "Search", backgroundColor: Color(hue: 0.537, saturation: 0.991, brightness: 0.602), cornerRadius: 12, isAnimating: self.$viewModel.activityIndAnimating)
                             .padding(.trailing, 8)
                     }
                     Spacer()
@@ -41,12 +41,7 @@ struct SearchView: View {
         @Binding var textFieldText: String
         
         var body: some View {
-            TextField("Search", text: $textFieldText)
-//                .onChange(of: textFieldText) {
-//                    if $0.count > 3 {
-//                        viewModel.getMovies($0)
-//                    }
-//                }
+            TextField("", text: $textFieldText)
                 .frame(height: 40)
                 .padding(.horizontal, 15)
                 .accentColor(.white)

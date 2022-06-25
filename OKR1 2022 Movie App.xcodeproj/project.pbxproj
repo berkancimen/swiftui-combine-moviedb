@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12AA6D0A28678FCC00C489EA /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA6D0928678FCC00C489EA /* TestExtensions.swift */; };
+		12AA6D0B28678FCC00C489EA /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA6D0928678FCC00C489EA /* TestExtensions.swift */; };
+		12AA6D132867911E00C489EA /* OKR1_2022_Movie_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA6D122867911E00C489EA /* OKR1_2022_Movie_AppUITests.swift */; };
+		12AA6D152867911E00C489EA /* OKR1_2022_Movie_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA6D142867911E00C489EA /* OKR1_2022_Movie_AppUITestsLaunchTests.swift */; };
 		3D64923F284B9F5D00A7BFF3 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64923E284B9F5D00A7BFF3 /* MovieListViewModel.swift */; };
 		3D649242284D026D00A7BFF3 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D649241284D026D00A7BFF3 /* MovieDetail.swift */; };
 		3D649244284D046500A7BFF3 /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D649243284D046500A7BFF3 /* MovieDetailModel.swift */; };
@@ -80,6 +84,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		12AA6D162867911E00C489EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D7A93F928141E520045B379 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D7A940028141E520045B379;
+			remoteInfo = "OKR1 2022 Movie App";
+		};
 		3D7A941228141E540045B379 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3D7A93F928141E520045B379 /* Project object */;
@@ -90,6 +101,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12AA6D0928678FCC00C489EA /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
+		12AA6D102867911E00C489EA /* OKR1 2022 Movie AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OKR1 2022 Movie AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12AA6D122867911E00C489EA /* OKR1_2022_Movie_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKR1_2022_Movie_AppUITests.swift; sourceTree = "<group>"; };
+		12AA6D142867911E00C489EA /* OKR1_2022_Movie_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKR1_2022_Movie_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D64923E284B9F5D00A7BFF3 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		3D649241284D026D00A7BFF3 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		3D649243284D046500A7BFF3 /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
@@ -133,6 +148,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		12AA6D0D2867911E00C489EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3D7A93FE28141E520045B379 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +174,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12AA6D112867911E00C489EA /* OKR1 2022 Movie AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				12AA6D122867911E00C489EA /* OKR1_2022_Movie_AppUITests.swift */,
+				12AA6D142867911E00C489EA /* OKR1_2022_Movie_AppUITestsLaunchTests.swift */,
+			);
+			path = "OKR1 2022 Movie AppUITests";
+			sourceTree = "<group>";
+		};
 		3D649240284D025A00A7BFF3 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +197,7 @@
 			children = (
 				3D7A940328141E520045B379 /* OKR1 2022 Movie App */,
 				3D7A941428141E540045B379 /* OKR1 2022 Movie AppTests */,
+				12AA6D112867911E00C489EA /* OKR1 2022 Movie AppUITests */,
 				3D7A940228141E520045B379 /* Products */,
 				3D7A94822818055C0045B379 /* Frameworks */,
 			);
@@ -176,6 +208,7 @@
 			children = (
 				3D7A940128141E520045B379 /* OKR1 2022 Movie App.app */,
 				3D7A941128141E540045B379 /* OKR1 2022 Movie AppTests.xctest */,
+				12AA6D102867911E00C489EA /* OKR1 2022 Movie AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +243,7 @@
 				3D7A941528141E540045B379 /* Movie_Filtering_Tests.swift */,
 				3DC5013E2822E82F00CC5C38 /* Movie_Sorting_Tests.swift */,
 				3DDAE6A52857B7B9009F51C0 /* Movie_Search_Tests.swift */,
+				12AA6D0928678FCC00C489EA /* TestExtensions.swift */,
 			);
 			path = "OKR1 2022 Movie AppTests";
 			sourceTree = "<group>";
@@ -337,6 +371,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		12AA6D0F2867911E00C489EA /* OKR1 2022 Movie AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12AA6D182867911E00C489EA /* Build configuration list for PBXNativeTarget "OKR1 2022 Movie AppUITests" */;
+			buildPhases = (
+				12AA6D0C2867911E00C489EA /* Sources */,
+				12AA6D0D2867911E00C489EA /* Frameworks */,
+				12AA6D0E2867911E00C489EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12AA6D172867911E00C489EA /* PBXTargetDependency */,
+			);
+			name = "OKR1 2022 Movie AppUITests";
+			productName = "OKR1 2022 Movie AppUITests";
+			productReference = 12AA6D102867911E00C489EA /* OKR1 2022 Movie AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		3D7A940028141E520045B379 /* OKR1 2022 Movie App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D7A942528141E540045B379 /* Build configuration list for PBXNativeTarget "OKR1 2022 Movie App" */;
@@ -388,6 +440,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					12AA6D0F2867911E00C489EA = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 3D7A940028141E520045B379;
+					};
 					3D7A940028141E520045B379 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -415,11 +471,19 @@
 			targets = (
 				3D7A940028141E520045B379 /* OKR1 2022 Movie App */,
 				3D7A941028141E540045B379 /* OKR1 2022 Movie AppTests */,
+				12AA6D0F2867911E00C489EA /* OKR1 2022 Movie AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		12AA6D0E2867911E00C489EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3D7A93FF28141E520045B379 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,6 +503,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		12AA6D0C2867911E00C489EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12AA6D152867911E00C489EA /* OKR1_2022_Movie_AppUITestsLaunchTests.swift in Sources */,
+				12AA6D132867911E00C489EA /* OKR1_2022_Movie_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3D7A93FD28141E520045B379 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,6 +531,7 @@
 				3DC5013A2822E6E000CC5C38 /* FilterView.swift in Sources */,
 				3D649248284E3A8700A7BFF3 /* HorizontalMovieSliderView.swift in Sources */,
 				3D7A945928155D370045B379 /* HomeViewModel.swift in Sources */,
+				12AA6D0A28678FCC00C489EA /* TestExtensions.swift in Sources */,
 				3D7A94702815AE200045B379 /* Constants.swift in Sources */,
 				3D64923F284B9F5D00A7BFF3 /* MovieListViewModel.swift in Sources */,
 				3D7A9462281592990045B379 /* GridMovieCardView.swift in Sources */,
@@ -498,6 +572,7 @@
 				3DDAE6A62857B7B9009F51C0 /* Movie_Search_Tests.swift in Sources */,
 				3D649249284FD44300A7BFF3 /* MovieListViewModel.swift in Sources */,
 				3D7A9451281556BD0045B379 /* HomeView.swift in Sources */,
+				12AA6D0B28678FCC00C489EA /* TestExtensions.swift in Sources */,
 				3D7A94782817FA620045B379 /* MockWebService.swift in Sources */,
 				3D64924D284FD47600A7BFF3 /* MovieDetail.swift in Sources */,
 				3D64924B284FD46400A7BFF3 /* HorizontalMovieSliderView.swift in Sources */,
@@ -522,6 +597,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		12AA6D172867911E00C489EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D7A940028141E520045B379 /* OKR1 2022 Movie App */;
+			targetProxy = 12AA6D162867911E00C489EA /* PBXContainerItemProxy */;
+		};
 		3D7A941328141E540045B379 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3D7A940028141E520045B379 /* OKR1 2022 Movie App */;
@@ -530,6 +610,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		12AA6D192867911E00C489EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "berkan.com.adesso.OKR1-2022-Movie-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "OKR1 2022 Movie App";
+			};
+			name = Debug;
+		};
+		12AA6D1A2867911E00C489EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "berkan.com.adesso.OKR1-2022-Movie-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "OKR1 2022 Movie App";
+			};
+			name = Release;
+		};
 		3D7A942328141E540045B379 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -751,6 +863,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12AA6D182867911E00C489EA /* Build configuration list for PBXNativeTarget "OKR1 2022 Movie AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12AA6D192867911E00C489EA /* Debug */,
+				12AA6D1A2867911E00C489EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3D7A93FC28141E520045B379 /* Build configuration list for PBXProject "OKR1 2022 Movie App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

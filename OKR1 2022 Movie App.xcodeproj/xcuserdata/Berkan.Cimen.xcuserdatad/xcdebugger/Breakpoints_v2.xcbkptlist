@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "621F6828-A63B-42D4-AA29-913C735B0DBB"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2542C998-A344-4AB8-A377-0B1E60B4711D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Services/WebServiceFactory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "create()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2542C998-A344-4AB8-A377-0B1E60B4711D - ecc1aed6a271bc38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static OKR1_2022_Movie_App.WebServiceFactory.create() -&gt; OKR1_2022_Movie_App.NetworkService"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-moviedb/OKR1%202022%20Movie%20App/Services/WebServiceFactory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "648">
+               </Location>
+               <Location
+                  uuid = "2542C998-A344-4AB8-A377-0B1E60B4711D - f25a58680b45ef5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static OKR1_2022_Movie_AppTests.WebServiceFactory.create() -&gt; OKR1_2022_Movie_AppTests.NetworkService"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-moviedb/OKR1%202022%20Movie%20App/Services/WebServiceFactory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "648">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

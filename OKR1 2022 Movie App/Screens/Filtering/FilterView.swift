@@ -33,7 +33,7 @@ struct FilterView: View {
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     Image(systemName: "xmark.circle")
-                        .font(.system(size: 25))
+                        .font(.system(size: 20))
                         .foregroundColor(.white)
                 }.padding(.trailing, 20)
             }

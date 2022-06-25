@@ -60,8 +60,8 @@ struct HorizontalMovieSliderView: View {
     
 }
 
-//struct HorizontalMovieSliderView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HorizontalMovieSliderView(movies: Binding[MovieViewModel.default], sliderType: .popular)
-//    }
-//}
+struct HorizontalMovieSliderView_Previews: PreviewProvider {
+    static var previews: some View {
+        HorizontalMovieSliderView(movies: .constant([MovieViewModel.default]), sliderType: .popular)
+    }
+}

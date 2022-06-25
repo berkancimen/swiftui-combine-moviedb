@@ -30,22 +30,6 @@ class SearchViewModel: ObservableObject {
         self.service = service
     }
     
-//    func getMovies(searchText: String) async {
-//        self.searchText = searchText
-//        do {
-//            let response: MovieResponse = try await service.fetch(url: EndPoints.search(searchText), page: pageNumber)
-//            let items = response.results
-//            DispatchQueue.main.async {
-//                self.movies.append(contentsOf: items.map(MovieViewModel.init))
-//                self.filteredMovies.append(contentsOf: items.map(MovieViewModel.init))
-//                self.filterMovie(rating: self.filterOptions.0, sort: nil)
-//            }
-//            self.pageNumber += 1
-//        } catch {
-//            print(error)
-//        }
-//    }
-    
     func shouldLoadMore(movie : MovieViewModel) {
         if let lastId = filteredMovies.last?.id, movie.id == lastId {
             getMovies(searchText)

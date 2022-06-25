@@ -28,7 +28,6 @@ struct MovieList: View {
         .navigationTitle(viewModel.screenName)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                
                 Button {
                     showSheet.toggle()
                 } label: {
@@ -37,9 +36,6 @@ struct MovieList: View {
                     FilterView(selectedSortType: viewModel.filterOptions.1 ?? .date, selectedRatingFilter: viewModel.filterOptions.0 ?? .none) { sortType, rating in
                         viewModel.filterMovie(rating: rating, sort: sortType)
                     }
-//                    FilterView(completion: { (sortType,rating) in
-//                        viewModel.filterMovie(rating: rating, sort: sortType)
-//                    })
                 }
             }
         }

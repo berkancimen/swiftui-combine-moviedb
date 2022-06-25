@@ -60,8 +60,8 @@ struct MovieViewModel {
         movie.vote_average
     }
     
-    var ratingString: String {
-        return movie.vote_average != 0.0 ? String(format: "%.1f", movie.vote_average) : "N/A"
+    var ratingString: String? {
+        return  movie.vote_average != 0.0 ? String(format: "%.1f", movie.vote_average) : nil
     }
     
     var imageUrl: String {

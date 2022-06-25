@@ -44,14 +44,15 @@ struct MovieListCardView: View {
                         .multilineTextAlignment(.leading)
                         .lineLimit(1)
                     Spacer()
-                    Image("starIcon")
-                        .frame(width: 30, height: 30)
-                    Text(movie.ratingString)
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color(red: 1.0, green: 0.757, blue: 0.027))
-                        .lineLimit(1)
-                        .frame(height: 30)
-                        
+                    if let ratingString = movie.ratingString {
+                        Image("starIcon")
+                            .frame(width: 30, height: 30)
+                        Text(ratingString)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color(red: 1.0, green: 0.757, blue: 0.027))
+                            .lineLimit(1)
+                            .frame(height: 30)
+                    }
                 }
             }
             Spacer()
