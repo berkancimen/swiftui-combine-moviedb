@@ -13,7 +13,7 @@ struct MovieDetail: View {
     @StateObject private var viewModel: MovieDetailViewModel
     
     init(movieId: Int) {
-        _viewModel = StateObject(wrappedValue: MovieDetailViewModel(service: WebServiceFactory.create(), movieId: movieId))
+        _viewModel = StateObject(wrappedValue: MovieDetailViewModel(service: Webservice(), movieId: movieId))
     }
     
     let columns = [

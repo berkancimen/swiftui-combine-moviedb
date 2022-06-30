@@ -14,7 +14,7 @@ struct MovieList: View {
     @ObservedObject private var viewModel: MovieListViewModel
     
     init(screenName: ScreenNames) {
-        _viewModel = ObservedObject(wrappedValue: MovieListViewModel(service: WebServiceFactory.create(), screenName: screenName))
+        _viewModel = ObservedObject(wrappedValue: MovieListViewModel(service: Webservice(), screenName: screenName))
     }
     
     var body: some View {

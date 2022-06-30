@@ -10,8 +10,8 @@ import XCTest
 
 class Movie_Sorting_Tests: XCTestCase {
     
-    let mockService: NetworkService = WebServiceFactory.create()
-    let sorting = MovieSort()
+    let mockService: NetworkService = MockWebService()
+    let sut = MovieSort()
 
     func test_sorting_movies_with_rating() async {
         
@@ -24,7 +24,7 @@ class Movie_Sorting_Tests: XCTestCase {
             }
         }
         
-        let sortedMovies = sorting.sort({$0.rating}, movies)
+        let sortedMovies = sut.sort({$0.rating}, movies)
         
         for index in 0...sortedMovies.count - 1 {
             guard sortedMovies.indices.contains(index + 1) else {return}
@@ -44,7 +44,7 @@ class Movie_Sorting_Tests: XCTestCase {
             }
         }
         
-        let sortedMovies = sorting.sort({$0.id}, movies)
+        let sortedMovies = sut.sort({$0.id}, movies)
         
         for index in 0...sortedMovies.count - 1 {
             guard sortedMovies.indices.contains(index + 1) else {return}

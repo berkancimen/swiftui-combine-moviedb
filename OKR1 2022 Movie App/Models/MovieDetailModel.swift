@@ -25,6 +25,10 @@ class MovieDetailModel: Decodable {
     var vote_average: Double?
     var vote_count: Int?
     var runtime: Int?
+    
+    init(name: String) {
+        self.title = name
+    }
 }
 
 // MARK: - ProductionCompany
@@ -101,7 +105,7 @@ struct MovieDetailModelViewModel {
     }
     
     static var `default`: MovieDetailModelViewModel {
-        let movie = MovieDetailModel()
+        let movie = MovieDetailModel(name: "MovieDefault")
         return MovieDetailModelViewModel(movie: movie)
     }
     

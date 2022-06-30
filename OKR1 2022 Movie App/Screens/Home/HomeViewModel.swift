@@ -7,8 +7,7 @@
 
 import Foundation
 
-@MainActor
-class ViewModelHome : ObservableObject{
+class ViewModelHome : ObservableObject {
     
     @Published var genres: [GenresViewModel] = []
     @Published var popularMovies: [MovieViewModel] = []
@@ -20,12 +19,14 @@ class ViewModelHome : ObservableObject{
     init(service: NetworkService) {
         self.service = service
     }
-        
+   
     func getGenres() async {
         do {
             let response: GenreResponse = try await service.fetch(url: EndPoints.genre, page: nil)
             let items = response.genres
-            self.genres = items.map(GenresViewModel.init)
+            DispatchQueue.main.async {
+                self.genres = items.map(GenresViewModel.init)
+            }
         } catch {
             print(error)
         }
@@ -35,7 +36,9 @@ class ViewModelHome : ObservableObject{
         do {
             let response: MovieResponse = try await service.fetch(url: EndPoints.popular, page: nil)
             let items = response.results
-            self.popularMovies = items.map(MovieViewModel.init)
+            DispatchQueue.main.async {
+                self.popularMovies = items.map(MovieViewModel.init)
+            }
         } catch {
             print(error)
         }
@@ -45,7 +48,9 @@ class ViewModelHome : ObservableObject{
         do {
             let response: MovieResponse = try await service.fetch(url: EndPoints.trending, page: nil)
             let items = response.results
-            self.trengingMovies = items.map(MovieViewModel.init)
+            DispatchQueue.main.async {
+                self.trengingMovies = items.map(MovieViewModel.init)
+            }
         } catch {
             print(error)
         }
@@ -55,7 +60,9 @@ class ViewModelHome : ObservableObject{
         do {
             let response: MovieResponse = try await service.fetch(url: EndPoints.topRated, page: nil)
             let items = response.results
-            self.topRatedMovies = items.map(MovieViewModel.init)
+            DispatchQueue.main.async {
+                self.topRatedMovies = items.map(MovieViewModel.init)
+            }
         } catch {
             print(error)
         }

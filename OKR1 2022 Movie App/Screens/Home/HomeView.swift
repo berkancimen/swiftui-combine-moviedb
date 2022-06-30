@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var viewModel = ViewModelHome(service: WebServiceFactory.create())
+    @StateObject private var viewModel = ViewModelHome(service: Webservice())
     
     var body : some View {
         GeometryReader { g in

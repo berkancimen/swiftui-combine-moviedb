@@ -31,10 +31,11 @@ class MockWebService: NetworkService {
                 Movie(title: "Movie9", id: 9, genre_ids: [25], vote_average: 8.0, poster_path: "")
             ]
             return (MovieResponse(results: movies) as? T)!
+        case .movieDetail(_):
+            let movieDetailResponse = MovieDetailModel(name: "Movie1")
+            return (movieDetailResponse as? T)!
         default:
             fatalError()
-        }
-        
-        
+        }        
     }
 }

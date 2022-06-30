@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @ObservedObject private var viewModel = SearchViewModel(service: WebServiceFactory.create())
+    @ObservedObject private var viewModel = SearchViewModel(service: Webservice())
     @State var textFieldText: String = ""
     
     var body: some View {

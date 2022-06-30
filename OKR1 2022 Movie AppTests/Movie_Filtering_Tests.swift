@@ -10,8 +10,8 @@ import XCTest
 
 class Movie_Filtering_Tests: XCTestCase {
  
-    let mockService: NetworkService = WebServiceFactory.create()
-    let movieFilter = MovieFilter()
+    let mockService: NetworkService = MockWebService()
+    let sut = MovieFilter()
     
     /// Movies should be filtered according to its' genre.
     func test_filtering_movie_with_genre() async {
@@ -27,7 +27,7 @@ class Movie_Filtering_Tests: XCTestCase {
 
         let actionGenre = GenresViewModel(genre: Genre(name: "Action", id: 8))
 
-        let filteredMovies = movieFilter.filter(movies, MovieGenreSpecification(actionGenre))
+        let filteredMovies = sut.filter(movies, MovieGenreSpecification(actionGenre))
         XCTAssertEqual(2, filteredMovies.count)
 
         let notContainsMovie1 = filteredMovies.contains { movie in
@@ -62,7 +62,7 @@ class Movie_Filtering_Tests: XCTestCase {
             }
         }
                         
-        let above7Movies = movieFilter.filter(movies, MovieRatingSpecification(ratingEnum: .aboveSeven))
+        let above7Movies = sut.filter(movies, MovieRatingSpecification(ratingEnum: .aboveSeven))
         XCTAssertEqual(1, above7Movies.count)
         XCTAssertEqual("Movie9", above7Movies.first?.name)
     }
@@ -78,7 +78,7 @@ class Movie_Filtering_Tests: XCTestCase {
             }
         }
 
-        let between5and7Movies = movieFilter.filter(movies, MovieRatingSpecification(ratingEnum: .betweenFiveAndSeven))
+        let between5and7Movies = sut.filter(movies, MovieRatingSpecification(ratingEnum: .betweenFiveAndSeven))
         XCTAssertEqual(4, between5and7Movies.count)
 
         let between5and7MoviesNames = between5and7Movies.map {$0.name}
@@ -99,7 +99,7 @@ class Movie_Filtering_Tests: XCTestCase {
             }
         }
 
-        let below5Movies = movieFilter.filter(movies, MovieRatingSpecification(ratingEnum: .belowFive))
+        let below5Movies = sut.filter(movies, MovieRatingSpecification(ratingEnum: .belowFive))
         XCTAssertEqual(2, below5Movies.count)
         XCTAssertEqual("Movie1", below5Movies.first?.name)
     }
@@ -115,7 +115,7 @@ class Movie_Filtering_Tests: XCTestCase {
             }
         }
 
-        let noneMovies = movieFilter.filter(movies, MovieRatingSpecification(ratingEnum: .none))
+        let noneMovies = sut.filter(movies, MovieRatingSpecification(ratingEnum: .none))
         XCTAssertEqual(2, noneMovies.count)
     }
 
@@ -132,15 +132,15 @@ class Movie_Filtering_Tests: XCTestCase {
 
         let comedyGenre = GenresViewModel(genre: Genre(name: "Comedy", id: 14))
 
-        let below5Movies = movieFilter.filter(movies, MovieRatingSpecification(ratingEnum: .belowFive))
+        let below5Movies = sut.filter(movies, MovieRatingSpecification(ratingEnum: .belowFive))
         // There are 2 movies which rating is below 5
         XCTAssertEqual(2, below5Movies.count)
 
-        let filteredMovies = movieFilter.filter(movies, MovieGenreSpecification(comedyGenre))
+        let filteredMovies = sut.filter(movies, MovieGenreSpecification(comedyGenre))
         // There are 2 movies which genre is Comedy
         XCTAssertEqual(2, filteredMovies.count)
 
-        let comedyAndRatingBelow5Movies = movieFilter.filter(movies, AndSpecification(
+        let comedyAndRatingBelow5Movies = sut.filter(movies, AndSpecification(
                 MovieGenreSpecification(comedyGenre), MovieRatingSpecification(ratingEnum: .belowFive)))
         // There are 2 movies which genre is Comedy and rating is below 5
         XCTAssertEqual(1, comedyAndRatingBelow5Movies.count)
