@@ -73,5 +73,12 @@ class MovieListViewModel : ObservableObject {
         }
         
     }
-
+    
+    func getEndPoint() -> EndPoints {
+        self.endPoint
+    }
+    
+    func setEndPoint(endPoint: EndPoints) {
+        self.endPoint = endPoint
+    }
 }

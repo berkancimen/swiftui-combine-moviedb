@@ -30,4 +30,17 @@ class MovieDetailViewModel_Tests: XCTestCase {
         await waitForExpectations(timeout: 1, handler: nil)
         XCTAssertEqual("Movie1", sut.movieDetail.name)
     }
+    
+    func test_movie_detail_fetch_error() async {
+        sut = MovieDetailViewModel(service: MockWebService(), movieId: 2)
+        XCTAssertEqual("MovieDefault", sut.movieDetail.name)
+        await sut.getMovieDetail()
+        let expectation = self.expectation(description: "Test")
+        DispatchQueue.main.async {
+            expectation.fulfill()
+        }
+        await waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertEqual("MovieDefault", sut.movieDetail.name)
+    }
+    
 }

@@ -28,7 +28,7 @@ struct Movie: Decodable {
     var vote_average: Double
     var poster_path: String?
     var overview: String?
-    var release_date: String?
+    var release_date: String
 }
 
 struct MovieViewModel {
@@ -77,11 +77,11 @@ struct MovieViewModel {
     }
     
     var releaseDate: String {
-        movie.release_date ?? ""
+        movie.release_date
     }
     
     static var `default`: MovieViewModel {
-        let movie = Movie(title: "Movie 1", id: 0, genre_ids: [], vote_average: 2.3, poster_path: "/74xTEgt7R36Fpooo50r9T25onhq.jpg", overview: "Description")
+        let movie = Movie(title: "Movie 1", id: 0, genre_ids: [], vote_average: 2.3, poster_path: "/74xTEgt7R36Fpooo50r9T25onhq.jpg", overview: "Description", release_date: "2021-12-04")
         return MovieViewModel(movie: movie)
     }
 }

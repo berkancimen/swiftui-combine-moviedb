@@ -20,7 +20,10 @@ struct SearchView: View {
                     HStack(spacing: 10) {
                         SearchTextField(textFieldText: $textFieldText)
                         CustomButtonView(completion: {
-                            viewModel.getMovies(textFieldText)
+                            Task {
+                                await viewModel.getMovies(textFieldText)
+                            }
+//                            viewModel.getMovies(textFieldText)
                         }, title: "Search", backgroundColor: Color(hue: 0.537, saturation: 0.991, brightness: 0.602), cornerRadius: 12, isAnimating: self.$viewModel.activityIndAnimating)
                             .padding(.trailing, 8)
                     }

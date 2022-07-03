@@ -32,7 +32,9 @@ class SearchViewModel: ObservableObject {
     
     func shouldLoadMore(movie : MovieViewModel) {
         if let lastId = filteredMovies.last?.id, movie.id == lastId {
-            getMovies(searchText)
+            Task {
+                await getMovies(searchText)
+            }
         }
         return
     }
@@ -53,7 +55,7 @@ class SearchViewModel: ObservableObject {
         
     }
     
-    func getMovies(_ text: String) {
+    func getMovies(_ text: String) async {
         if self.searchText == text {
             task?.cancel()
             activityIndAnimating = false
