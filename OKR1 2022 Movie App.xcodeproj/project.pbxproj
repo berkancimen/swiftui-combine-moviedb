@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123BEB9628F2F02F00337511 /* SearchViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BEB9528F2F02F00337511 /* SearchViewModel_Tests.swift */; };
 		126DF17228720BBB00A4BD06 /* MovieListViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DF17128720BBB00A4BD06 /* MovieListViewModel_Tests.swift */; };
-		126DF1762872154F00A4BD06 /* SearchViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DF1752872154F00A4BD06 /* SearchViewModel_Tests.swift */; };
 		12AA6D0A28678FCC00C489EA /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA6D0928678FCC00C489EA /* TestExtensions.swift */; };
 		12AA6D0B28678FCC00C489EA /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA6D0928678FCC00C489EA /* TestExtensions.swift */; };
 		12AA6D132867911E00C489EA /* OKR1_2022_Movie_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA6D122867911E00C489EA /* OKR1_2022_Movie_AppUITests.swift */; };
@@ -103,8 +103,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		123BEB9528F2F02F00337511 /* SearchViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel_Tests.swift; sourceTree = "<group>"; };
 		126DF17128720BBB00A4BD06 /* MovieListViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel_Tests.swift; sourceTree = "<group>"; };
-		126DF1752872154F00A4BD06 /* SearchViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel_Tests.swift; sourceTree = "<group>"; };
 		12AA6D0928678FCC00C489EA /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		12AA6D102867911E00C489EA /* OKR1 2022 Movie AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OKR1 2022 Movie AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12AA6D122867911E00C489EA /* OKR1_2022_Movie_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKR1_2022_Movie_AppUITests.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		3D649243284D046500A7BFF3 /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
 		3D649245284D08D400A7BFF3 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		3D649247284E3A8700A7BFF3 /* HorizontalMovieSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalMovieSliderView.swift; sourceTree = "<group>"; };
-		3D7A940128141E520045B379 /* OKR1 2022 Movie App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OKR1 2022 Movie App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D7A940128141E520045B379 /* OKR2 2022 Movie App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OKR2 2022 Movie App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7A940428141E520045B379 /* OKR1_2022_Movie_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKR1_2022_Movie_AppApp.swift; sourceTree = "<group>"; };
 		3D7A940628141E520045B379 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3D7A940828141E540045B379 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 				12E24023286C79E6003CF322 /* HomeViewModel_Tests.swift */,
 				126DF17128720BBB00A4BD06 /* MovieListViewModel_Tests.swift */,
 				12E2401F286C2F29003CF322 /* MovieDetailViewModel_Tests.swift */,
-				126DF1752872154F00A4BD06 /* SearchViewModel_Tests.swift */,
+				123BEB9528F2F02F00337511 /* SearchViewModel_Tests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 		3D7A940228141E520045B379 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D7A940128141E520045B379 /* OKR1 2022 Movie App.app */,
+				3D7A940128141E520045B379 /* OKR2 2022 Movie App.app */,
 				3D7A941128141E540045B379 /* OKR1 2022 Movie AppTests.xctest */,
 				12AA6D102867911E00C489EA /* OKR1 2022 Movie AppUITests.xctest */,
 			);
@@ -438,7 +438,7 @@
 				3D7A94652815944B0045B379 /* SDWebImageSwiftUI */,
 			);
 			productName = "OKR1 2022 Movie App";
-			productReference = 3D7A940128141E520045B379 /* OKR1 2022 Movie App.app */;
+			productReference = 3D7A940128141E520045B379 /* OKR2 2022 Movie App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3D7A941028141E540045B379 /* OKR1 2022 Movie AppTests */ = {
@@ -618,7 +618,7 @@
 				3D7A9443281427F70045B379 /* Movie.swift in Sources */,
 				3DDAE6A12857B6DE009F51C0 /* StringExtensions.swift in Sources */,
 				3D88D36C2853217600BCD166 /* ActivityIndicator.swift in Sources */,
-				126DF1762872154F00A4BD06 /* SearchViewModel_Tests.swift in Sources */,
+				123BEB9628F2F02F00337511 /* SearchViewModel_Tests.swift in Sources */,
 				3D7A9456281557E10045B379 /* UIKitTabBar.swift in Sources */,
 				3D7A9495281D6B250045B379 /* CustomButtonView.swift in Sources */,
 				3D64924A284FD44900A7BFF3 /* MovieDetailViewModel.swift in Sources */,
@@ -815,8 +815,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "berkan.com.adesso.OKR1-2022-Movie-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "berkan.com.adesso.OKR2-2022-Movie-App";
+				PRODUCT_NAME = "OKR2 2022 Movie App";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -846,8 +846,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "berkan.com.adesso.OKR1-2022-Movie-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "berkan.com.adesso.OKR2-2022-Movie-App";
+				PRODUCT_NAME = "OKR2 2022 Movie App";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
