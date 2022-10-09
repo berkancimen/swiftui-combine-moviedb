@@ -24,7 +24,6 @@ class SearchViewModel_Tests: XCTestCase {
         await getMovies(searchText: "Search Test")
         XCTAssertEqual(sut.filteredMovies.count, 9)
         XCTAssertEqual(sut.filteredMovies.first?.name, "Movie1")
-        //
     }
     
     func getMovies(searchText: String) async {
