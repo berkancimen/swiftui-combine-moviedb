@@ -292,5 +292,197 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "69209B6A-E83A-424B-8CAC-1D62BA792792"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie AppTests/MockService/MockWebService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetch(url:page:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "69209B6A-E83A-424B-8CAC-1D62BA792792 - 7a473896b95bb4fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_App.MockWebService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: OKR1_2022_Movie_App.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20AppTests/MockService/MockWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "443">
+               </Location>
+               <Location
+                  uuid = "69209B6A-E83A-424B-8CAC-1D62BA792792 - 24289b6c0756437e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_AppTests.MockWebService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: OKR1_2022_Movie_AppTests.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20AppTests/MockService/MockWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "443">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "468A6F7F-5C34-4614-A648-2C6818863289"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Screens/Search/SearchViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "getMovies(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "468A6F7F-5C34-4614-A648-2C6818863289 - 445413e87ed8b59a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for closure #1 @Sendable () async -&gt; () in OKR1_2022_Movie_App.SearchViewModel.getMovies(Swift.String) async -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Search/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "417">
+               </Location>
+               <Location
+                  uuid = "468A6F7F-5C34-4614-A648-2C6818863289 - 18a0f85971fdecf7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for closure #1 @Sendable () async -&gt; () in OKR1_2022_Movie_AppTests.SearchViewModel.getMovies(Swift.String) async -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Search/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "417">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE72EDBE-A1F4-40D0-889C-4BACE7776BFA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Screens/Search/SearchViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "getMovies(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CE72EDBE-A1F4-40D0-889C-4BACE7776BFA - 445413e87ed8aa40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for closure #1 @Sendable () async -&gt; () in OKR1_2022_Movie_App.SearchViewModel.getMovies(Swift.String) async -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Search/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "738">
+               </Location>
+               <Location
+                  uuid = "CE72EDBE-A1F4-40D0-889C-4BACE7776BFA - 18a0f85971fdf32d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for closure #1 @Sendable () async -&gt; () in OKR1_2022_Movie_AppTests.SearchViewModel.getMovies(Swift.String) async -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Search/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "738">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "370FFB59-7939-491F-89F9-BB60D95F086F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Screens/Search/SearchViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "getMovies(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "370FFB59-7939-491F-89F9-BB60D95F086F - 8e34d2b1d072f956"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor @Sendable () -&gt; () in closure #1 @Sendable () async -&gt; () in OKR1_2022_Movie_App.SearchViewModel.getMovies(Swift.String) async -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Search/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "368">
+               </Location>
+               <Location
+                  uuid = "370FFB59-7939-491F-89F9-BB60D95F086F - cba6c61d9d495eff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor @Sendable () -&gt; () in closure #1 @Sendable () async -&gt; () in OKR1_2022_Movie_AppTests.SearchViewModel.getMovies(Swift.String) async -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Search/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "368">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -30,7 +30,7 @@ class MockWebService: NetworkService {
                 throw error
             }
         case .search(let searchText):
-            if searchText == "Search Test" {
+            if searchText == "Search%20Test" {
                 let movies: [Movie] = getMovieList()
                 return (MovieResponse(results: movies) as? T)!
             } else {
