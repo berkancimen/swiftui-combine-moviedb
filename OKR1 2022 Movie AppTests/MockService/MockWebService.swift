@@ -8,7 +8,7 @@
 import Foundation
 
 class MockWebService: NetworkService {
-    
+   
     func fetch<T: Decodable>(url: EndPoints, page: Int? = nil) async throws -> T {
         switch url {
         case .genre:

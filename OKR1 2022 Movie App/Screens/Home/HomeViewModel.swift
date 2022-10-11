@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class ViewModelHome : ObservableObject {
     
@@ -16,32 +17,56 @@ class ViewModelHome : ObservableObject {
     
     private var service: NetworkService
     
+    private var cancellable: AnyCancellable?
+    
     init(service: NetworkService) {
         self.service = service
     }
    
-    func getGenres() async {
-        do {
-            let response: GenreResponse = try await service.fetch(url: EndPoints.genre, page: nil)
-            let items = response.genres
-            DispatchQueue.main.async {
-                self.genres = items.map(GenresViewModel.init)
-            }
-        } catch {
-            print(error)
-        }
+    func getGenres() {
+        let response: AnyPublisher<GenreResponse, Error> = service.combineFetch(url: EndPoints.genre, page: nil)
+        self.cancellable = response
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] in
+                self?.genres = $0.genres.map(GenresViewModel.init)
+            })
     }
     
-    func getPopularMovies() async {
-        do {
-            let response: MovieResponse = try await service.fetch(url: EndPoints.popular, page: nil)
-            let items = response.results
-            DispatchQueue.main.async {
-                self.popularMovies = items.map(MovieViewModel.init)
-            }
-        } catch {
-            print(error)
-        }
+    func getPopularMovies() {
+
+//        let response: AnyPublisher<MovieResponse, Error> = service.combineFetch(url: EndPoints.popular, page: nil)
+//            .receive(on: DispatchQueue.main)
+//            .subscribe(Subscribers.Sink(
+//                receiveCompletion: { completion in
+//                    switch completion {
+//                    case .finished:
+//                        break
+//                    case .failure(let error):
+//                        print(error)
+//                    }
+//                }, receiveValue: { [weak self] in
+//                    self?.popularMovies = $0.results.map(MovieViewModel.init)
+//                }
+//            ))
+            
+        
+        
+//        do {
+//            let response: MovieResponse = try await service.fetch(url: EndPoints.popular, page: nil)
+//            let items = response.results
+//            DispatchQueue.main.async {
+//                self.popularMovies = items.map(MovieViewModel.init)
+//            }
+//        } catch {
+//            print(error)
+//        }
     }
     
     func getTrendingMovies() async {
