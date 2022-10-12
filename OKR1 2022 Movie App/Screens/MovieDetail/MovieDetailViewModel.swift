@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class MovieDetailViewModel: ObservableObject {
     
@@ -13,6 +14,7 @@ class MovieDetailViewModel: ObservableObject {
     
     private var service: NetworkService
     private var movieId: Int
+    private var cancellable: AnyCancellable?
     
     init(service: NetworkService, movieId: Int) {
         self.service = service
@@ -20,14 +22,18 @@ class MovieDetailViewModel: ObservableObject {
     }
     
     func getMovieDetail() async {
-        do {
-            let response: MovieDetailModel = try await service.fetch(url: EndPoints.movieDetail(movieId), page: nil)
-            DispatchQueue.main.async {
-                self.movieDetail = MovieDetailModelViewModel(movie: response)
-            }
-        } catch {
-            print(error)
-        }
+        let response: AnyPublisher<MovieDetailModel, Error> = service.fetch(url:EndPoints.movieDetail(movieId), page: nil)
+        cancellable = response
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] in
+                self?.movieDetail = MovieDetailModelViewModel(movie: $0)
+            })
     }
     
 }

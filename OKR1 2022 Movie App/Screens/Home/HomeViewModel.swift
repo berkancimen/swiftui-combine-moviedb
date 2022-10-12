@@ -16,17 +16,15 @@ class ViewModelHome : ObservableObject {
     @Published var topRatedMovies: [MovieViewModel] = []
     
     private var service: NetworkService
-    
-    private var cancellable: AnyCancellable?
+    private var cancellables = Set<AnyCancellable>()
     
     init(service: NetworkService) {
         self.service = service
     }
    
     func getGenres() {
-        let response: AnyPublisher<GenreResponse, Error> = service.combineFetch(url: EndPoints.genre, page: nil)
-        self.cancellable = response
-            .receive(on: DispatchQueue.main)
+        let response: AnyPublisher<GenreResponse, Error> = service.fetch(url: EndPoints.genre, page: nil)
+        response
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -36,61 +34,51 @@ class ViewModelHome : ObservableObject {
                 }
             }, receiveValue: { [weak self] in
                 self?.genres = $0.genres.map(GenresViewModel.init)
-            })
+            }).store(in: &cancellables)
     }
     
     func getPopularMovies() {
-
-//        let response: AnyPublisher<MovieResponse, Error> = service.combineFetch(url: EndPoints.popular, page: nil)
-//            .receive(on: DispatchQueue.main)
-//            .subscribe(Subscribers.Sink(
-//                receiveCompletion: { completion in
-//                    switch completion {
-//                    case .finished:
-//                        break
-//                    case .failure(let error):
-//                        print(error)
-//                    }
-//                }, receiveValue: { [weak self] in
-//                    self?.popularMovies = $0.results.map(MovieViewModel.init)
-//                }
-//            ))
-            
-        
-        
-//        do {
-//            let response: MovieResponse = try await service.fetch(url: EndPoints.popular, page: nil)
-//            let items = response.results
-//            DispatchQueue.main.async {
-//                self.popularMovies = items.map(MovieViewModel.init)
-//            }
-//        } catch {
-//            print(error)
-//        }
+        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.popular, page: nil)
+        response
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] in
+                self?.popularMovies = $0.results.map(MovieViewModel.init)
+            }).store(in: &cancellables)
     }
     
     func getTrendingMovies() async {
-        do {
-            let response: MovieResponse = try await service.fetch(url: EndPoints.trending, page: nil)
-            let items = response.results
-            DispatchQueue.main.async {
-                self.trengingMovies = items.map(MovieViewModel.init)
-            }
-        } catch {
-            print(error)
-        }
+        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.trending, page: nil)
+        response
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] in
+                self?.trengingMovies = $0.results.map(MovieViewModel.init)
+            }).store(in: &cancellables)
     }
     
     func getTopRatedMovies() async {
-        do {
-            let response: MovieResponse = try await service.fetch(url: EndPoints.topRated, page: nil)
-            let items = response.results
-            DispatchQueue.main.async {
-                self.topRatedMovies = items.map(MovieViewModel.init)
-            }
-        } catch {
-            print(error)
-        }
+        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.topRated, page: nil)
+        response
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] in
+                self?.topRatedMovies = $0.results.map(MovieViewModel.init)
+            }).store(in: &cancellables)
     }
-    
 }

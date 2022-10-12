@@ -21,7 +21,7 @@ class MovieListViewModel_Tests: XCTestCase {
 
     func test_get_movies() async {
         XCTAssertEqual(sut.filteredMovies.count, 0)
-        await getMovies()
+        await sut.getMovies()
         XCTAssertEqual(sut.filteredMovies.count, 9)
         XCTAssertEqual(sut.filteredMovies.first?.name, "Movie1")
     }
@@ -33,7 +33,7 @@ class MovieListViewModel_Tests: XCTestCase {
     
     func test_should_load_more() async {
         XCTAssertEqual(sut.filteredMovies.count, 0)
-        await getMovies()
+        await sut.getMovies()
         XCTAssertEqual(sut.filteredMovies.count, 9)
         sut.shouldLoadMore(movie: sut.filteredMovies.last!)
         let expectation = self.expectation(description: "Should Load More Exp")
@@ -46,7 +46,7 @@ class MovieListViewModel_Tests: XCTestCase {
     
     func test_should_not_load_more() async {
         XCTAssertEqual(sut.filteredMovies.count, 0)
-        await getMovies()
+        await sut.getMovies()
         XCTAssertEqual(sut.filteredMovies.count, 9)
         sut.shouldLoadMore(movie: sut.filteredMovies.first!)
         let expectation = self.expectation(description: "Should Load More Exp")
@@ -58,27 +58,27 @@ class MovieListViewModel_Tests: XCTestCase {
     }
     
     func test_filtering_with_rating() async {
-        await getMovies()
+        await sut.getMovies()
         sut.filterMovie(rating: Ratings.aboveSeven)
         XCTAssertEqual(1, sut.filteredMovies.count)
         XCTAssertEqual("Movie9", sut.filteredMovies.first?.name)
     }
     
     func test_filtering_none() async {
-        await getMovies()
+        await sut.getMovies()
         sut.filterMovie()
         XCTAssertEqual(9, sut.filteredMovies.count)
         XCTAssertEqual("Movie1", sut.filteredMovies.first?.name)
     }
     
     func test_sorting_rating() async {
-        await getMovies()
+        await sut.getMovies()
         sut.filterMovie(sort: .rating)
         XCTAssertEqual("Movie7", sut.filteredMovies.first?.name)
     }
     
     func test_sort_date() async {
-        await getMovies()
+        await sut.getMovies()
         sut.filterMovie(sort: .date)
         XCTAssertEqual("Movie8", sut.filteredMovies.first?.name)
         XCTAssertEqual("Movie9", sut.filteredMovies.last?.name)
@@ -86,17 +86,7 @@ class MovieListViewModel_Tests: XCTestCase {
     
     func test_fetch_movie_with_error() async {
         sut.setEndPoint(endPoint: .search(""))
-        await getMovies()
+        await sut.getMovies()
         XCTAssertEqual(0, sut.filteredMovies.count)
     }
-    
-    func getMovies() async {
-        await sut.getMovies()
-        let expectation = self.expectation(description: "Fetch Movies Exp")
-        DispatchQueue.main.async {
-            expectation.fulfill()
-        }
-        await waitForExpectations(timeout: 1, handler: nil)
-    }
-    
 }
