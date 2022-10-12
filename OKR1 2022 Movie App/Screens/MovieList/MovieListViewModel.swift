@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class MovieListViewModel : ObservableObject {
     
@@ -16,6 +17,7 @@ class MovieListViewModel : ObservableObject {
     private var service: NetworkService
     private var endPoint: EndPoints
     private var pageNumber: Int = 1
+    private var cancellable: AnyCancellable?
     
     let movieFilter = MovieFilter()
     let sorting = MovieSort()
@@ -29,18 +31,22 @@ class MovieListViewModel : ObservableObject {
     }
     
     func getMovies() async {
-        do {
-            let response: MovieResponse = try await service.fetch(url: self.endPoint, page: pageNumber)
-            let items = response.results
-            DispatchQueue.main.async {
-                self.movies.append(contentsOf: items.map(MovieViewModel.init))
-                self.filteredMovies.append(contentsOf: items.map(MovieViewModel.init))
-                self.filterMovie(rating: self.filterOptions.0, sort: nil)
-            }
-            self.pageNumber += 1
-        } catch {
-            print(error)
-        }
+        
+        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: self.endPoint, page: nil)
+        cancellable = response
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] in
+                self?.movies.append(contentsOf: $0.results.map(MovieViewModel.init))
+                self?.filteredMovies.append(contentsOf: $0.results.map(MovieViewModel.init))
+                self?.filterMovie(rating: self?.filterOptions.0, sort: nil)
+                self?.pageNumber += 1
+            })
     }
     
     func shouldLoadMore(movie : MovieViewModel) {

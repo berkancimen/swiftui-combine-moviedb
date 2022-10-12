@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class ViewModelHome : ObservableObject {
     
@@ -15,57 +16,69 @@ class ViewModelHome : ObservableObject {
     @Published var topRatedMovies: [MovieViewModel] = []
     
     private var service: NetworkService
+    private var cancellables = Set<AnyCancellable>()
     
     init(service: NetworkService) {
         self.service = service
     }
    
-    func getGenres() async {
-        do {
-            let response: GenreResponse = try await service.fetch(url: EndPoints.genre, page: nil)
-            let items = response.genres
-            DispatchQueue.main.async {
-                self.genres = items.map(GenresViewModel.init)
-            }
-        } catch {
-            print(error)
-        }
+    func getGenres() {
+        let response: AnyPublisher<GenreResponse, Error> = service.fetch(url: EndPoints.genre, page: nil)
+        response
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] in
+                self?.genres = $0.genres.map(GenresViewModel.init)
+            }).store(in: &cancellables)
     }
     
-    func getPopularMovies() async {
-        do {
-            let response: MovieResponse = try await service.fetch(url: EndPoints.popular, page: nil)
-            let items = response.results
-            DispatchQueue.main.async {
-                self.popularMovies = items.map(MovieViewModel.init)
-            }
-        } catch {
-            print(error)
-        }
+    func getPopularMovies() {
+        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.popular, page: nil)
+        response
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] in
+                self?.popularMovies = $0.results.map(MovieViewModel.init)
+            }).store(in: &cancellables)
     }
     
     func getTrendingMovies() async {
-        do {
-            let response: MovieResponse = try await service.fetch(url: EndPoints.trending, page: nil)
-            let items = response.results
-            DispatchQueue.main.async {
-                self.trengingMovies = items.map(MovieViewModel.init)
-            }
-        } catch {
-            print(error)
-        }
+        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.trending, page: nil)
+        response
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] in
+                self?.trengingMovies = $0.results.map(MovieViewModel.init)
+            }).store(in: &cancellables)
     }
     
     func getTopRatedMovies() async {
-        do {
-            let response: MovieResponse = try await service.fetch(url: EndPoints.topRated, page: nil)
-            let items = response.results
-            DispatchQueue.main.async {
-                self.topRatedMovies = items.map(MovieViewModel.init)
-            }
-        } catch {
-            print(error)
-        }
+        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.topRated, page: nil)
+        response
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] in
+                self?.topRatedMovies = $0.results.map(MovieViewModel.init)
+            }).store(in: &cancellables)
     }
-    
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class SearchViewModel: ObservableObject {
     
@@ -18,6 +19,8 @@ class SearchViewModel: ObservableObject {
     
     private var service: NetworkService
     private var pageNumber: Int = 1
+    
+    private var cancellable: AnyCancellable?
     
     let movieFilter = MovieFilter()
     let sorting = MovieSort()
@@ -82,20 +85,23 @@ class SearchViewModel: ObservableObject {
                 return
             }
             self.searchText = text
-            do {
-                let response: MovieResponse = try await service.fetch(url: EndPoints.search(searchText.urlHostAllowedString()), page: pageNumber)
-                let items = response.results
-                DispatchQueue.main.async {
-                    self.activityIndAnimating = false
-                    self.movies.append(contentsOf: items.map(MovieViewModel.init))
-                    self.filteredMovies.append(contentsOf: items.map(MovieViewModel.init))
-                    self.filterMovie(rating: self.filterOptions.0, sort: nil)
-                }
-                self.pageNumber += 1
-            } catch {
-                activityIndAnimating = false
-                print(error)
-            }
+            let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.search(searchText.urlHostAllowedString()), page: pageNumber)
+            cancellable = response
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        self.activityIndAnimating = false
+                        print(error)
+                    }
+                }, receiveValue: { [weak self] in
+                    self?.activityIndAnimating = false
+                    self?.movies.append(contentsOf: $0.results.map(MovieViewModel.init))
+                    self?.filteredMovies.append(contentsOf: $0.results.map(MovieViewModel.init))
+                    self?.filterMovie(rating: self?.filterOptions.0, sort: nil)
+                    self?.pageNumber += 1
+                })
         }
     }
 }

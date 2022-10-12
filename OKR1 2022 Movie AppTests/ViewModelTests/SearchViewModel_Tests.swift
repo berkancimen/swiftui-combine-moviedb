@@ -5,8 +5,7 @@
 //  Created by Cimen, Berkan on 9.10.2022.
 //
 
-import Foundation
-
+import XCTest
 
 class SearchViewModel_Tests: XCTestCase {
 
@@ -22,6 +21,11 @@ class SearchViewModel_Tests: XCTestCase {
 
     func test_search_movies() async {
         await getMovies(searchText: "Search Test")
+        let expectation = self.expectation(description: "Test")
+        DispatchQueue.main.async {
+            expectation.fulfill()
+        }
+        await waitForExpectations(timeout: 1, handler: nil)
         XCTAssertEqual(sut.filteredMovies.count, 9)
         XCTAssertEqual(sut.filteredMovies.first?.name, "Movie1")
     }
