@@ -133,7 +133,7 @@ struct MovieDetail: View {
             .frame(maxWidth: .infinity)
             .navigationTitle(viewModel.movieDetail.name)
             .task({
-                await viewModel.getMovieDetail()
+                viewModel.getMovieDetail()
             })
         }
         

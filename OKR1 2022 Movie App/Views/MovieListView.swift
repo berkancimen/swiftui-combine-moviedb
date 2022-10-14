@@ -21,9 +21,9 @@ struct MovieListView: View {
                 NavigationLink(destination: MovieDetail(movieId: movie.id)) {
                     EmptyView()
                 }.opacity(0.0)
-            }.listRowBackground(Color.clear)
+            }.listRowBackground(Color("37_37_42"))
         }
-        .background(Color.clear)
+        .background(Color.black)
         .listStyle(.plain)
         .listRowSeparator(.hidden)
     }

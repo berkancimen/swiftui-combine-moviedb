@@ -193,13 +193,6 @@
 			path = MockService;
 			sourceTree = "<group>";
 		};
-		12E24022286C2FFA003CF322 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		12E240252872094F003CF322 /* ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				12E240252872094F003CF322 /* ViewModelTests */,
-				12E24022286C2FFA003CF322 /* Utils */,
 				12E24021286C2F33003CF322 /* MockService */,
 				3D7A941528141E540045B379 /* Movie_Filtering_Tests.swift */,
 				3DC5013E2822E82F00CC5C38 /* Movie_Sorting_Tests.swift */,

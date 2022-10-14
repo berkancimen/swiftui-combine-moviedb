@@ -21,9 +21,8 @@ struct SearchView: View {
                         SearchTextField(textFieldText: $textFieldText)
                         CustomButtonView(completion: {
                             Task {
-                                await viewModel.getMovies(textFieldText)
+                                viewModel.getMovies(textFieldText)
                             }
-//                            viewModel.getMovies(textFieldText)
                         }, title: "Search", backgroundColor: Color(hue: 0.537, saturation: 0.991, brightness: 0.602), cornerRadius: 12, isAnimating: self.$viewModel.activityIndAnimating)
                             .padding(.trailing, 8)
                     }
@@ -36,6 +35,7 @@ struct SearchView: View {
                 .background(Color("37_37_42"))
                 .navigationBarTitle("Search", displayMode: .inline)
             }.accentColor(.white)
+            
         }
     }
     

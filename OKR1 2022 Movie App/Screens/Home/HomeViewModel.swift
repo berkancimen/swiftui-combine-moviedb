@@ -52,7 +52,7 @@ class ViewModelHome : ObservableObject {
             }).store(in: &cancellables)
     }
     
-    func getTrendingMovies() async {
+    func getTrendingMovies() {
         let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.trending, page: nil)
         response
             .sink(receiveCompletion: { completion in
@@ -67,7 +67,7 @@ class ViewModelHome : ObservableObject {
             }).store(in: &cancellables)
     }
     
-    func getTopRatedMovies() async {
+    func getTopRatedMovies() {
         let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.topRated, page: nil)
         response
             .sink(receiveCompletion: { completion in

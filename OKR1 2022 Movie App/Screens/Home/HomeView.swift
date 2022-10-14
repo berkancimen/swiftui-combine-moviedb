@@ -35,21 +35,21 @@ struct HomeView: View {
                             .foregroundColor(.gray)
                             .padding([.leading, .trailing], 120)
                     }.task({
-                        await viewModel.getGenres()
+                        viewModel.getGenres()
                     })
                     
                     // POPULAR MOVIES
                     HorizontalMovieSliderView(movies: $viewModel.popularMovies, sliderType: .popular).task({
-                        await viewModel.getPopularMovies()
+                        viewModel.getPopularMovies()
                     })
                     // Trending MOVIES
                     HorizontalMovieSliderView(movies: $viewModel.trengingMovies, sliderType: .trending).task({
-                        await viewModel.getTrendingMovies()
+                        viewModel.getTrendingMovies()
                     })
                     
                     // Top Rated MOVIES
                     HorizontalMovieSliderView(movies: $viewModel.topRatedMovies, sliderType: .topRated).task({
-                        await viewModel.getTopRatedMovies()
+                        viewModel.getTopRatedMovies()
                     })
                     
                 }

@@ -30,9 +30,9 @@ class MovieListViewModel : ObservableObject {
         self.screenName = screenName.getScreenName()
     }
     
-    func getMovies() async {
+    func getMovies() {
         
-        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: self.endPoint, page: nil)
+        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: self.endPoint, page: pageNumber)
         cancellable = response
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -52,7 +52,7 @@ class MovieListViewModel : ObservableObject {
     func shouldLoadMore(movie : MovieViewModel) {
         if let lastId = filteredMovies.last?.id, movie.id == lastId {
             Task {
-                await getMovies()
+                getMovies()
             }
         }
         return

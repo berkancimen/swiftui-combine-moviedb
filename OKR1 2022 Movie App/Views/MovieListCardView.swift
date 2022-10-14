@@ -59,7 +59,7 @@ struct MovieListCardView: View {
         }
         .listRowBackground(Color.clear)
         .padding([.bottom], 6)
-        .background(Color.clear)
+        .background(Color("37_37_42"))
     }
 }
 

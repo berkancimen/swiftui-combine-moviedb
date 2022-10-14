@@ -15,6 +15,7 @@ struct MovieList: View {
     
     init(screenName: ScreenNames) {
         _viewModel = ObservedObject(wrappedValue: MovieListViewModel(service: Webservice(), screenName: screenName))
+        viewModel.getMovies()
     }
     
     var body: some View {
@@ -38,10 +39,7 @@ struct MovieList: View {
                     }
                 }
             }
-        }
-        .task({
-            await viewModel.getMovies()
-        })
+        } 
     }
     
 }

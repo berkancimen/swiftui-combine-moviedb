@@ -58,7 +58,7 @@ class SearchViewModel: ObservableObject {
         
     }
     
-    func getMovies(_ text: String) async {
+    func getMovies(_ text: String) {
         if self.searchText == text {
             task?.cancel()
             activityIndAnimating = false
