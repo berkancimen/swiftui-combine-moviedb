@@ -15,7 +15,6 @@ struct MovieList: View {
     
     init(screenName: ScreenNames) {
         _viewModel = ObservedObject(wrappedValue: MovieListViewModel(service: Webservice(), screenName: screenName))
-        viewModel.getMovies()
     }
     
     var body: some View {
@@ -25,6 +24,9 @@ struct MovieList: View {
                 viewModel.shouldLoadMore(movie: movie)
             }
         }
+        .onAppear(perform: {
+            viewModel.getMovies()
+        })
         .background(Color("37_37_42"))
         .navigationTitle(viewModel.screenName)
         .toolbar {

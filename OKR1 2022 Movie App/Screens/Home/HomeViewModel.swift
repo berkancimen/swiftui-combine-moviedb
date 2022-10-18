@@ -15,6 +15,10 @@ class ViewModelHome : ObservableObject {
     @Published var trengingMovies: [MovieViewModel] = []
     @Published var topRatedMovies: [MovieViewModel] = []
     
+    lazy private var networkClient: HomeNetworkClient = {
+        let client = NetworkClient(service: service)
+        return client
+    }()
     private var service: NetworkService
     private var cancellables = Set<AnyCancellable>()
     
@@ -23,62 +27,46 @@ class ViewModelHome : ObservableObject {
     }
    
     func getGenres() {
-        let response: AnyPublisher<GenreResponse, Error> = service.fetch(url: EndPoints.genre, page: nil)
-        response
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            }, receiveValue: { [weak self] in
-                self?.genres = $0.genres.map(GenresViewModel.init)
-            }).store(in: &cancellables)
+        networkClient.getGenres(cancallebles: &cancellables) { result in
+            switch result {
+            case .success((let genres)):
+                self.genres = genres
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func getPopularMovies() {
-        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.popular, page: nil)
-        response
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            }, receiveValue: { [weak self] in
-                self?.popularMovies = $0.results.map(MovieViewModel.init)
-            }).store(in: &cancellables)
+        networkClient.getMovies(cancallebles: &cancellables, endPoint: .popular, page: nil) { result in
+            switch result {
+            case .success((let movies)):
+                self.popularMovies = movies
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func getTrendingMovies() {
-        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.trending, page: nil)
-        response
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            }, receiveValue: { [weak self] in
-                self?.trengingMovies = $0.results.map(MovieViewModel.init)
-            }).store(in: &cancellables)
+        networkClient.getMovies(cancallebles: &cancellables, endPoint: .trending, page: nil) { result in
+            switch result {
+            case .success((let movies)):
+                self.trengingMovies = movies
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func getTopRatedMovies() {
-        let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.topRated, page: nil)
-        response
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            }, receiveValue: { [weak self] in
-                self?.topRatedMovies = $0.results.map(MovieViewModel.init)
-            }).store(in: &cancellables)
+        networkClient.getMovies(cancallebles: &cancellables, endPoint: .topRated, page: nil) { result in
+            switch result {
+            case .success((let movies)):
+                self.topRatedMovies = movies
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

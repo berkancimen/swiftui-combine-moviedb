@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1214DC0228FEB8E700719CD9 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214DC0128FEB8E700719CD9 /* NetworkClient.swift */; };
 		123BEB9628F2F02F00337511 /* SearchViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BEB9528F2F02F00337511 /* SearchViewModel_Tests.swift */; };
 		126DF17228720BBB00A4BD06 /* MovieListViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DF17128720BBB00A4BD06 /* MovieListViewModel_Tests.swift */; };
 		12AA6D132867911E00C489EA /* OKR1_2022_Movie_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA6D122867911E00C489EA /* OKR1_2022_Movie_AppUITests.swift */; };
 		12AA6D152867911E00C489EA /* OKR1_2022_Movie_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA6D142867911E00C489EA /* OKR1_2022_Movie_AppUITestsLaunchTests.swift */; };
+		12C7D28728FEC860001015F9 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214DC0128FEB8E700719CD9 /* NetworkClient.swift */; };
 		12E24020286C2F29003CF322 /* MovieDetailViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E2401F286C2F29003CF322 /* MovieDetailViewModel_Tests.swift */; };
 		12E24024286C79E6003CF322 /* HomeViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E24023286C79E6003CF322 /* HomeViewModel_Tests.swift */; };
 		3D64923F284B9F5D00A7BFF3 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64923E284B9F5D00A7BFF3 /* MovieListViewModel.swift */; };
@@ -101,6 +103,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1214DC0128FEB8E700719CD9 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		123BEB9528F2F02F00337511 /* SearchViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel_Tests.swift; sourceTree = "<group>"; };
 		126DF17128720BBB00A4BD06 /* MovieListViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel_Tests.swift; sourceTree = "<group>"; };
 		12AA6D102867911E00C489EA /* OKR1 2022 Movie AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OKR1 2022 Movie AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				3D7A946C2815AD2C0045B379 /* WebService.swift */,
+				1214DC0128FEB8E700719CD9 /* NetworkClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -550,6 +554,7 @@
 				3D7A940528141E520045B379 /* OKR1_2022_Movie_AppApp.swift in Sources */,
 				3DC5013A2822E6E000CC5C38 /* FilterView.swift in Sources */,
 				3D649248284E3A8700A7BFF3 /* HorizontalMovieSliderView.swift in Sources */,
+				1214DC0228FEB8E700719CD9 /* NetworkClient.swift in Sources */,
 				3D7A945928155D370045B379 /* HomeViewModel.swift in Sources */,
 				3D7A94702815AE200045B379 /* Constants.swift in Sources */,
 				3D64923F284B9F5D00A7BFF3 /* MovieListViewModel.swift in Sources */,
@@ -610,6 +615,7 @@
 				3D64924A284FD44900A7BFF3 /* MovieDetailViewModel.swift in Sources */,
 				3D7A9449281439B80045B379 /* Genre.swift in Sources */,
 				3DC501422822E86C00CC5C38 /* SortingHelper.swift in Sources */,
+				12C7D28728FEC860001015F9 /* NetworkClient.swift in Sources */,
 				3D7A9492281D47350045B379 /* MovieListCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
