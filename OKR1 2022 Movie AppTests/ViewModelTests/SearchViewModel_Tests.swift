@@ -10,8 +10,8 @@ import XCTest
 class SearchViewModel_Tests: XCTestCase {
 
     var sut: SearchViewModel!
-
-    override func setUpWithError() throws {
+    
+    override func setUp() {
         sut = SearchViewModel(service: MockWebService())
     }
 
@@ -31,7 +31,7 @@ class SearchViewModel_Tests: XCTestCase {
     }
     
     func getMovies(searchText: String) async {
-        await sut.getMovies(searchText)
+        sut.getMovies(searchText)
         let expectation = self.expectation(description: "Fetch Movies Exp")
         DispatchQueue.main.async {
             expectation.fulfill()

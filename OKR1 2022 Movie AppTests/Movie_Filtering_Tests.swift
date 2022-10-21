@@ -16,10 +16,10 @@ class Movie_Filtering_Tests: XCTestCase {
     private var mockMovies: [MovieViewModel] = []
     private var cancallable: AnyCancellable?
     
-    override func setUpWithError() throws {
+    override func setUp() {
         getMockMovies()
     }
-    
+   
     /// Movies should be filtered according to its' genre.
     func test_filtering_movie_with_genre() async {
         

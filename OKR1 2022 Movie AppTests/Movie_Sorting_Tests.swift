@@ -16,7 +16,7 @@ class Movie_Sorting_Tests: XCTestCase {
     private var mockMovies: [MovieViewModel] = []
     private var cancallable: AnyCancellable?
     
-    override func setUpWithError() throws {
+    override func setUp() {
         getMockMovies()
     }
 
