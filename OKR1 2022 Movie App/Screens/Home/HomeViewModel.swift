@@ -15,10 +15,16 @@ class ViewModelHome : ObservableObject {
     @Published var trengingMovies: [MovieViewModel] = []
     @Published var topRatedMovies: [MovieViewModel] = []
     
-    lazy private var networkClient: HomeNetworkClient = {
-        let client = NetworkClient(service: service)
+    lazy private var genreService: GenreServicesProtocol = {
+        let client = GenreServices(service: service)
         return client
     }()
+    
+    lazy private var movieService: MovieServicesProtocol = {
+        let client = MovieServices(service: service)
+        return client
+    }()
+    
     private var service: NetworkService
     private var cancellables = Set<AnyCancellable>()
     
@@ -27,7 +33,7 @@ class ViewModelHome : ObservableObject {
     }
    
     func getGenres() {
-        networkClient.getGenres(cancallebles: &cancellables) { result in
+        genreService.getGenres(cancallebles: &cancellables) { result in
             switch result {
             case .success((let genres)):
                 self.genres = genres
@@ -38,7 +44,7 @@ class ViewModelHome : ObservableObject {
     }
     
     func getPopularMovies() {
-        networkClient.getMovies(cancallebles: &cancellables, endPoint: .popular, page: nil) { result in
+        movieService.getMovies(cancallebles: &cancellables, endPoint: .popular, page: nil) { result in
             switch result {
             case .success((let movies)):
                 self.popularMovies = movies
@@ -49,7 +55,7 @@ class ViewModelHome : ObservableObject {
     }
     
     func getTrendingMovies() {
-        networkClient.getMovies(cancallebles: &cancellables, endPoint: .trending, page: nil) { result in
+        movieService.getMovies(cancallebles: &cancellables, endPoint: .trending, page: nil) { result in
             switch result {
             case .success((let movies)):
                 self.trengingMovies = movies
@@ -60,7 +66,7 @@ class ViewModelHome : ObservableObject {
     }
     
     func getTopRatedMovies() {
-        networkClient.getMovies(cancallebles: &cancellables, endPoint: .topRated, page: nil) { result in
+        movieService.getMovies(cancallebles: &cancellables, endPoint: .topRated, page: nil) { result in
             switch result {
             case .success((let movies)):
                 self.topRatedMovies = movies

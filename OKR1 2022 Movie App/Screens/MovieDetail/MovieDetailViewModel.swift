@@ -22,7 +22,7 @@ class MovieDetailViewModel: ObservableObject {
     }
     
     func getMovieDetail() {
-        let response: AnyPublisher<MovieDetailModel, Error> = service.fetch(url:EndPoints.movieDetail(movieId), page: nil)
+        let response = service.fetch(type: MovieDetailModel.self, url:EndPoints.movieDetail(movieId), page: nil)
         cancellable = response
             .sink(receiveCompletion: { completion in
                 switch completion {

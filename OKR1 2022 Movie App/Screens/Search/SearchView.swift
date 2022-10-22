@@ -9,7 +9,12 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @ObservedObject private var viewModel = SearchViewModel(service: Webservice())
+    @ObservedObject private var viewModel: SearchViewModel
+    
+    init(service: NetworkService) {
+        _viewModel = ObservedObject(wrappedValue: SearchViewModel(service: service))
+    }
+
     @State var textFieldText: String = ""
     
     var body: some View {
@@ -61,7 +66,7 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(service: MockWebService())
     }
 }
 

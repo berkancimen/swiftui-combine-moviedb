@@ -10,7 +10,7 @@ import Combine
 
 class MockWebService: NetworkService {
     
-    func fetch<T: Decodable>(url: EndPoints, page: Int?) -> AnyPublisher<T, Error> {
+    func fetch<T>(type: T.Type, url: EndPoints, page: Int?) -> AnyPublisher<T, Error> where T: Decodable {
         switch url {
         case .genre:
             let genres = [
@@ -50,21 +50,6 @@ class MockWebService: NetworkService {
         }
     }
    
-    func fetch<T: Decodable>(url: EndPoints, page: Int? = nil) async throws -> T {
-        switch url {
-        case .genre:
-            let genres = [
-                Genre(name: "Action", id: 1),
-                Genre(name: "Comedy", id: 1),
-                Genre(name: "Science", id: 1)
-            ]
-            return (GenreResponse(genres: genres) as? T)!        
-        default:
-            let error = NSError(domain: "Error Test", code: 0, userInfo: [:])
-            throw error
-        }        
-    }
-    
     func getMockMovieResponse<T: Decodable>() -> AnyPublisher<T, Error> {
                 
         let movies = [

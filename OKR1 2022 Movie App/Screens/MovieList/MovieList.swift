@@ -13,8 +13,8 @@ struct MovieList: View {
     
     @ObservedObject private var viewModel: MovieListViewModel
     
-    init(screenName: ScreenNames) {
-        _viewModel = ObservedObject(wrappedValue: MovieListViewModel(service: Webservice(), screenName: screenName))
+    init(service: NetworkService, screenName: ScreenNames) {
+        _viewModel = ObservedObject(wrappedValue: MovieListViewModel(service: service, screenName: screenName))
     }
     
     var body: some View {
@@ -48,6 +48,6 @@ struct MovieList: View {
 
 struct MovieList_Previews: PreviewProvider {
     static var previews: some View {
-        MovieList(screenName: .popular)
+        MovieList(service: MockWebService(), screenName: .popular)
     }
 }

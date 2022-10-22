@@ -9,7 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var viewModel = ViewModelHome(service: Webservice())
+    @ObservedObject private var viewModel: ViewModelHome
+    let service: NetworkService
+    
+    init(service: NetworkService) {
+        self.service = service
+        _viewModel = ObservedObject(wrappedValue: ViewModelHome(service: service))
+    }
     
     var body : some View {
         GeometryReader { g in
@@ -24,7 +30,7 @@ struct HomeView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack (spacing: 15) {
                                 ForEach(viewModel.genres, id: \.genreId) { item in
-                                    NavigationLink(destination: MovieList(screenName: .genre(item.genreName, item.genreId))) {
+                                    NavigationLink(destination: MovieList(service: service, screenName: .genre(item.genreName, item.genreId))) {
                                         HorizontalSliderCardView(nameAndId: (item.genreName, item.genreId))
                                     }
                                 }
@@ -62,6 +68,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(service: MockWebService())
     }
 }

@@ -102,7 +102,7 @@ class Movie_Filtering_Tests: XCTestCase {
     
     func getMockMovies() {
         
-        let response: AnyPublisher<MovieResponse, Error> = mockService.fetch(url: EndPoints.popular, page: nil)
+        let response = mockService.fetch(type: MovieResponse.self, url: EndPoints.popular, page: nil)
         cancallable = response
             .sink(receiveCompletion: { completion in
                 switch completion {

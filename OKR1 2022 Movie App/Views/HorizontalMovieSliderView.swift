@@ -15,7 +15,7 @@ struct HorizontalMovieSliderView: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            NavigationLink(destination: MovieList(screenName: .popular)) {
+            NavigationLink(destination: MovieList(service: NetworkManager().service, screenName: .popular)) {
                 HomeHeaderView(title: sliderType.getScreenName()).padding([.leading, .trailing], 20)
             }
             ScrollView(.horizontal, showsIndicators: false) {
@@ -23,7 +23,7 @@ struct HorizontalMovieSliderView: View {
                     ForEach(movies, id: \.id) { item in
                         GeometryReader { proxy in
                             let scale = getScale(proxy: proxy)
-                            NavigationLink(destination: MovieDetail(movieId: item.id)) {
+                            NavigationLink(destination: MovieDetail(service: NetworkManager().service, movieId: item.id)) {
                                 GridMovieCardView(movie: item)
                             }.scaleEffect(.init(width: scale, height: scale))
                                 .animation(.easeOut, value: 0.5)

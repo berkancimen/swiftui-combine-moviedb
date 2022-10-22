@@ -10,12 +10,12 @@ import Combine
 
 protocol NetworkService {
     
-    func fetch<T: Decodable>(url: EndPoints, page: Int?) -> AnyPublisher<T, Error>
+    func fetch<T>(type: T.Type, url: EndPoints, page: Int?) -> AnyPublisher<T, Error> where T: Decodable
 }
 
 class Webservice: NetworkService {
     
-    func fetch<T: Decodable>(url: EndPoints, page: Int? = nil) -> AnyPublisher<T, Error> {
+    func fetch<T>(type: T.Type, url: EndPoints, page: Int?) -> AnyPublisher<T, Error> where T : Decodable {
         let urlString = url.url(page: page)
         guard let url = URL(string: urlString) else {
             let error = NSError(domain: "No URL", code: 0, userInfo: [:])

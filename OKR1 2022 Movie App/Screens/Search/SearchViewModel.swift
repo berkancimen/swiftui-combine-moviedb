@@ -36,7 +36,7 @@ class SearchViewModel: ObservableObject {
     func shouldLoadMore(movie : MovieViewModel) {
         if let lastId = filteredMovies.last?.id, movie.id == lastId {
             Task {
-                await getMovies(searchText)
+               getMovies(searchText)
             }
         }
         return
@@ -85,7 +85,7 @@ class SearchViewModel: ObservableObject {
                 return
             }
             self.searchText = text
-            let response: AnyPublisher<MovieResponse, Error> = service.fetch(url: EndPoints.search(searchText.urlHostAllowedString()), page: pageNumber)
+            let response = service.fetch(type: MovieResponse.self, url: EndPoints.search(searchText.urlHostAllowedString()), page: pageNumber)
             cancellable = response
                 .sink(receiveCompletion: { completion in
                     switch completion {

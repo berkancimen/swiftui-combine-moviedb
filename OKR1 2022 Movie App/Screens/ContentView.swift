@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    private var service: NetworkService = NetworkManager().service
     let coloredNavAppearance = UINavigationBarAppearance()
     @State private var selection = 0
     
@@ -31,11 +32,11 @@ struct ContentView: View {
         ZStack{
             UIKitTabView([
                 UIKitTabView.Tab(
-                    view: HomeView(),
+                    view: HomeView(service: service),
                     barItem: UITabBarItem(title: "", image: UIImage(named: "barHome"), selectedImage: UIImage(named: "barHomeSelect"))
                 ),
                 UIKitTabView.Tab(
-                    view: SearchView(),
+                    view: SearchView(service: service),
                     barItem: UITabBarItem(title: "", image: UIImage(named: "barSearch"), selectedImage: UIImage(named: "barSearchSelect"))
                 )
             ])

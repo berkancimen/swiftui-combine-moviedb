@@ -190,8 +190,8 @@
             filePath = "OKR1 2022 Movie App/Screens/Home/HomeView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -208,7 +208,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
-            landmarkName = "init(screenName:)"
+            landmarkName = "init(screenName:service:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -224,200 +224,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "init(movieId:)"
+            landmarkName = "init(service:movieId:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "628EAD9B-57A7-46C4-8CF0-B66E3CFFC0BE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OKR1 2022 Movie App/Services/WebService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "fetch(url:page:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "628EAD9B-57A7-46C4-8CF0-B66E3CFFC0BE - 3b1111433d1cc6c6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OKR1_2022_Movie_App.Webservice.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: OKR1_2022_Movie_App.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "OKR1 2022 Movie App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Services/WebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "875">
-               </Location>
-               <Location
-                  uuid = "628EAD9B-57A7-46C4-8CF0-B66E3CFFC0BE - 98ce95afa320daf1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OKR1_2022_Movie_AppTests.Webservice.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: OKR1_2022_Movie_AppTests.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "OKR1 2022 Movie AppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Services/WebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "875">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C1A922AB-0F1E-4C7F-8B7F-4DA8FBA16E47"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OKR1 2022 Movie App/Services/WebService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "fetch(url:page:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C1A922AB-0F1E-4C7F-8B7F-4DA8FBA16E47 - 3b1111433d1cc561"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OKR1_2022_Movie_App.Webservice.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: OKR1_2022_Movie_App.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "OKR1 2022 Movie App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Services/WebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "747">
-               </Location>
-               <Location
-                  uuid = "C1A922AB-0F1E-4C7F-8B7F-4DA8FBA16E47 - 98ce95afa320d956"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OKR1_2022_Movie_AppTests.Webservice.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: OKR1_2022_Movie_AppTests.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "OKR1 2022 Movie AppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Services/WebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "747">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4B0FBAE2-971C-4448-A51E-72BFB155E924"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OKR1 2022 Movie AppTests/MockService/MockWebService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "fetch(url:page:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4B0FBAE2-971C-4448-A51E-72BFB155E924 - 766d096de733c17"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OKR1_2022_Movie_App.MockWebService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: OKR1_2022_Movie_App.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "OKR1 2022 Movie App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20AppTests/MockService/MockWebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "700">
-               </Location>
-               <Location
-                  uuid = "4B0FBAE2-971C-4448-A51E-72BFB155E924 - 7a37e3b712eb4702"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OKR1_2022_Movie_AppTests.MockWebService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: OKR1_2022_Movie_AppTests.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "OKR1 2022 Movie AppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20AppTests/MockService/MockWebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "700">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9529F658-80F6-467D-BFA7-E4F8E90301D5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OKR1 2022 Movie AppTests/MockService/MockWebService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "fetch(url:page:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9529F658-80F6-467D-BFA7-E4F8E90301D5 - 766d096de733cb2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OKR1_2022_Movie_App.MockWebService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: OKR1_2022_Movie_App.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "OKR1 2022 Movie App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20AppTests/MockService/MockWebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "1051">
-               </Location>
-               <Location
-                  uuid = "9529F658-80F6-467D-BFA7-E4F8E90301D5 - 7a37e3b712eb47a7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OKR1_2022_Movie_AppTests.MockWebService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: OKR1_2022_Movie_AppTests.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "OKR1 2022 Movie AppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20AppTests/MockService/MockWebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "1051">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -440,48 +248,16 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C43516D7-AB40-4D90-96F4-8D3C496D66E0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OKR1 2022 Movie App/Screens/Home/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "init(service:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C43516D7-AB40-4D90-96F4-8D3C496D66E0 - c8b021aacc622cf1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OKR1_2022_Movie_App.ViewModelHome.init(service: OKR1_2022_Movie_App.NetworkService) -&gt; OKR1_2022_Movie_App.ViewModelHome"
-                  moduleName = "OKR1 2022 Movie App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "723">
-               </Location>
-               <Location
-                  uuid = "C43516D7-AB40-4D90-96F4-8D3C496D66E0 - d54c1c73e7ccb705"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OKR1_2022_Movie_AppTests.ViewModelHome.init(service: OKR1_2022_Movie_AppTests.NetworkService) -&gt; OKR1_2022_Movie_AppTests.ViewModelHome"
-                  moduleName = "OKR1 2022 Movie AppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "723">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -558,6 +334,54 @@
                   startingLineNumber = "12"
                   endingLineNumber = "12"
                   offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FADD19C9-359D-493D-941C-980A49E25937"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Network/WebService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "fetch(type:url:page:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FADD19C9-359D-493D-941C-980A49E25937 - a6d609298b84c493"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_App.Webservice.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, url: OKR1_2022_Movie_App.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Network/WebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "771">
+               </Location>
+               <Location
+                  uuid = "FADD19C9-359D-493D-941C-980A49E25937 - 351a3cb9c41bcf89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_AppTests.Webservice.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, url: OKR1_2022_Movie_AppTests.EndPoints, page: Swift.Optional&lt;Swift.Int&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Network/WebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "771">
                </Location>
             </Locations>
          </BreakpointContent>

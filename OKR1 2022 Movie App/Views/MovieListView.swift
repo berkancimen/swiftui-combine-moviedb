@@ -18,7 +18,7 @@ struct MovieListView: View {
                 MovieListCardView(movie: movie).onAppear {
                     onAppearCompletion?(movie)
                 }
-                NavigationLink(destination: MovieDetail(movieId: movie.id)) {
+                NavigationLink(destination: MovieDetail(service: NetworkManager().service, movieId: movie.id)) {
                     EmptyView()
                 }.opacity(0.0)
             }.listRowBackground(Color("37_37_42"))

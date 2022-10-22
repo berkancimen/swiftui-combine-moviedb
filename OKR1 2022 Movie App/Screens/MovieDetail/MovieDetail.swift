@@ -12,8 +12,8 @@ struct MovieDetail: View {
     
     @StateObject private var viewModel: MovieDetailViewModel
     
-    init(movieId: Int) {
-        _viewModel = StateObject(wrappedValue: MovieDetailViewModel(service: Webservice(), movieId: movieId))
+    init(service: NetworkService, movieId: Int) {
+        _viewModel = StateObject(wrappedValue: MovieDetailViewModel(service: service, movieId: movieId))
     }
     
     let columns = [
@@ -142,6 +142,6 @@ struct MovieDetail: View {
 
 struct MovieDetail_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetail(movieId: 675353)
+        MovieDetail(service: MockWebService(), movieId: 675353)
     }
 }
