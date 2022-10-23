@@ -27,6 +27,7 @@ struct HomeView: View {
                     // GENRES
                     VStack(alignment: .leading) {
                         HomeHeaderView(title: "Genres", withArrow: false).padding([.leading, .trailing], 20)
+                            .accessibilityIdentifier("GenreHeaderView")
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack (spacing: 15) {
                                 ForEach(viewModel.genres, id: \.genreId) { item in
@@ -47,16 +48,16 @@ struct HomeView: View {
                     // POPULAR MOVIES
                     HorizontalMovieSliderView(movies: $viewModel.popularMovies, sliderType: .popular).task({
                         viewModel.getPopularMovies()
-                    })
+                    }).accessibilityIdentifier("PopularMoviesSlider")
                     // Trending MOVIES
                     HorizontalMovieSliderView(movies: $viewModel.trengingMovies, sliderType: .trending).task({
                         viewModel.getTrendingMovies()
-                    })
+                    }).accessibilityIdentifier("TrendingMoviesSlider")
                     
                     // Top Rated MOVIES
                     HorizontalMovieSliderView(movies: $viewModel.topRatedMovies, sliderType: .topRated).task({
                         viewModel.getTopRatedMovies()
-                    })
+                    }).accessibilityIdentifier("TopRatedMoviesSlider")
                     
                 }
                 .background(Color("37_37_42"))

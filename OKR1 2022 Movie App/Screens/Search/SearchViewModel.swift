@@ -62,7 +62,6 @@ class SearchViewModel: ObservableObject {
         if self.searchText == text {
             task?.cancel()
             activityIndAnimating = false
-            return
         } else {
             activityIndAnimating = true
             pageNumber = 1

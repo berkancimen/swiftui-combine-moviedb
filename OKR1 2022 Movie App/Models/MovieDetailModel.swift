@@ -26,8 +26,9 @@ class MovieDetailModel: Decodable {
     var vote_count: Int?
     var runtime: Int?
     
-    init(name: String) {
+    init(name: String, voteAverage: Double? = nil) {
         self.title = name
+        self.vote_average = voteAverage
     }
 }
 

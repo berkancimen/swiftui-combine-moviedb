@@ -13,7 +13,14 @@ struct ContentView: View {
     let coloredNavAppearance = UINavigationBarAppearance()
     @State private var selection = 0
     
+    var uiKitTabView: UIKitTabView!
+    
     init() {
+        setUIKitTabbar()
+        setTabbarItems()
+    }
+    
+    private func setUIKitTabbar() {
         
         UITabBar.appearance().barTintColor = UIColor(named : "40_40_40")
         UITabBar.appearance().tintColor = UIColor.white
@@ -26,20 +33,30 @@ struct ContentView: View {
 
         UINavigationBar.appearance().standardAppearance = coloredNavAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
+        
+    }
+    
+    private mutating func setTabbarItems() {
+        
+        let homeTabbarItem = UIKitTabView.Tab(
+            view: HomeView(service: service),
+            barItem: UITabBarItem(title: "", image: UIImage(named: "barHome"), selectedImage: UIImage(named: "barHomeSelect"))
+        )
+        homeTabbarItem.barItem.accessibilityIdentifier = "HomeTabbarButton"
+        
+        let searchTabbarItem = UIKitTabView.Tab(
+            view: SearchView(service: service),
+            barItem: UITabBarItem(title: "", image: UIImage(named: "barSearch"), selectedImage: UIImage(named: "barSearchSelect"))
+        )
+        searchTabbarItem.barItem.accessibilityIdentifier = "SearchTabbarButton"
+        
+        self.uiKitTabView = UIKitTabView([homeTabbarItem, searchTabbarItem])
     }
     
     var body : some View {
+        
         ZStack{
-            UIKitTabView([
-                UIKitTabView.Tab(
-                    view: HomeView(service: service),
-                    barItem: UITabBarItem(title: "", image: UIImage(named: "barHome"), selectedImage: UIImage(named: "barHomeSelect"))
-                ),
-                UIKitTabView.Tab(
-                    view: SearchView(service: service),
-                    barItem: UITabBarItem(title: "", image: UIImage(named: "barSearch"), selectedImage: UIImage(named: "barSearchSelect"))
-                )
-            ])
+            uiKitTabView
         }
     }
 }

@@ -35,4 +35,19 @@ class MovieDetailModel_Tests: XCTestCase {
         XCTAssertEqual("N/A", sut.revenue)
         XCTAssertEqual("0 minutes", sut.duration)
     }
+    
+    func test_vote_avarages() {
+        sut = MovieDetailModelViewModel(movie: MovieDetailModel(name: "Movie 1", voteAverage: 1.5))
+        XCTAssertEqual(1.5, sut.rating)
+        XCTAssertEqual(Ratings.belowFive, sut.ratingEnum)
+        sut = MovieDetailModelViewModel(movie: MovieDetailModel(name: "Movie 1", voteAverage: 5.5))
+        XCTAssertEqual(5.5, sut.rating)
+        XCTAssertEqual(Ratings.betweenFiveAndSeven, sut.ratingEnum)
+        sut = MovieDetailModelViewModel(movie: MovieDetailModel(name: "Movie 1", voteAverage: 7.5))
+        XCTAssertEqual(7.5, sut.rating)
+        XCTAssertEqual(Ratings.aboveSeven, sut.ratingEnum)
+        sut = MovieDetailModelViewModel(movie: MovieDetailModel(name: "Movie 1", voteAverage: 10.5))
+        XCTAssertEqual(10.5, sut.rating)
+        XCTAssertEqual(Ratings.none, sut.ratingEnum)
+    }
 }

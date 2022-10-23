@@ -38,4 +38,22 @@ class SearchViewModel_Tests: XCTestCase {
         }
         await waitForExpectations(timeout: 1, handler: nil)
     }
+    
+    func test_search_should_load_more() async {
+        await getMovies(searchText: "Search Test")
+        let expectation = self.expectation(description: "Fetch Movies Exp")
+        DispatchQueue.main.async {
+            expectation.fulfill()
+        }
+        await waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertEqual(sut.filteredMovies.count, 9)
+        let lastMovie = MovieViewModel(movie: Movie(title: "Movie9", id: 9, genre_ids: [25], vote_average: 8.0, poster_path: "", release_date: "2021-12-04"))
+        sut.shouldLoadMore(movie: lastMovie)
+        let expectationTwo = self.expectation(description: "Fetch Movies Exp")
+        DispatchQueue.main.async {
+            expectationTwo.fulfill()
+        }
+        await waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertEqual(sut.filteredMovies.count, 18)
+    }
 }
