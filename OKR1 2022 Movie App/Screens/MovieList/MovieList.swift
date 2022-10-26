@@ -13,7 +13,7 @@ struct MovieList: View {
     
     @ObservedObject private var viewModel: MovieListViewModel
     
-    init(service: NetworkService, screenName: ScreenNames) {
+    init(service: NetworkServiceProtocol, screenName: ScreenNames) {
         _viewModel = ObservedObject(wrappedValue: MovieListViewModel(service: service, screenName: screenName))
     }
     

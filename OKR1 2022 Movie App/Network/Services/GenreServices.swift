@@ -10,16 +10,16 @@ import Combine
 
 typealias GenreCompletion = (_ result: Result<[GenresViewModel], Error>) -> Void
 
-protocol GenreServicesProtocol {
+protocol GenreServicesProtocol: AnyObject {
     
     func getGenres(cancallebles: inout Set<AnyCancellable>, completion: @escaping GenreCompletion)
 }
 
 class GenreServices {
     
-    var service: NetworkService
+    var service: NetworkServiceProtocol
     
-    required init(service: NetworkService) {
+    required init(service: NetworkServiceProtocol) {
         self.service = service
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class MockWebService: NetworkService {
+class MockWebService: NetworkServiceProtocol {
     
     func fetch<T>(type: T.Type, url: EndPoints, page: Int?) -> AnyPublisher<T, Error> where T: Decodable {
         switch url {

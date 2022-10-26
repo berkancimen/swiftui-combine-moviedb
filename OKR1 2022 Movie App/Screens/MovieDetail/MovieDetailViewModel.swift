@@ -12,28 +12,27 @@ class MovieDetailViewModel: ObservableObject {
     
     @Published var movieDetail: MovieDetailModelViewModel = MovieDetailModelViewModel.default
     
-    private var service: NetworkService
+    private var service: NetworkServiceProtocol
     private var movieId: Int
-    private var cancellable: AnyCancellable?
+    private var cancellables = Set<AnyCancellable>()
+    lazy private var movieDetailService: MovieDetailServiceProtocol = {
+        let client = MovieServices(service: service)
+        return client
+    }()
     
-    init(service: NetworkService, movieId: Int) {
+    init(service: NetworkServiceProtocol, movieId: Int) {
         self.service = service
         self.movieId = movieId
     }
     
     func getMovieDetail() {
-        let response = service.fetch(type: MovieDetailModel.self, url:EndPoints.movieDetail(movieId), page: nil)
-        cancellable = response
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            }, receiveValue: { [weak self] in
-                self?.movieDetail = MovieDetailModelViewModel(movie: $0)
-            })
+        movieDetailService.getMovieDetail(cancallebles: &cancellables, movieId: movieId) { result in
+            switch result {
+            case .success((let movieDetail)):
+                self.movieDetail = movieDetail
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
-    
 }

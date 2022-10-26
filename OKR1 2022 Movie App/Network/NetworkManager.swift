@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkManager: ObservableObject {
     
-    @Published var service: NetworkService = {
+    @Published var service: NetworkServiceProtocol = {
         var isRunningTests: Bool {
             return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
         }

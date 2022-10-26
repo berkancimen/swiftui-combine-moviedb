@@ -17,10 +17,14 @@ class SearchViewModel: ObservableObject {
     
     private var searchText: String = ""
     
-    private var service: NetworkService
+    private var service: NetworkServiceProtocol
     private var pageNumber: Int = 1
     
-    private var cancellable: AnyCancellable?
+    private var cancellables = Set<AnyCancellable>()
+    lazy private var movieSearchService: MovieSearchServiceProtocol = {
+        let client = MovieServices(service: service)
+        return client
+    }()
     
     let movieFilter = MovieFilter()
     let sorting = MovieSort()
@@ -29,7 +33,7 @@ class SearchViewModel: ObservableObject {
     
     var filterOptions: (Ratings?, SortType?) = (nil, nil)
     
-    init(service: NetworkService) {
+    init(service: NetworkServiceProtocol) {
         self.service = service
     }
     
@@ -84,23 +88,19 @@ class SearchViewModel: ObservableObject {
                 return
             }
             self.searchText = text
-            let response = service.fetch(type: MovieResponse.self, url: EndPoints.search(searchText.urlHostAllowedString()), page: pageNumber)
-            cancellable = response
-                .sink(receiveCompletion: { completion in
-                    switch completion {
-                    case .finished:
-                        break
-                    case .failure(let error):
-                        self.activityIndAnimating = false
-                        print(error)
-                    }
-                }, receiveValue: { [weak self] in
-                    self?.activityIndAnimating = false
-                    self?.movies.append(contentsOf: $0.results.map(MovieViewModel.init))
-                    self?.filteredMovies.append(contentsOf: $0.results.map(MovieViewModel.init))
-                    self?.filterMovie(rating: self?.filterOptions.0, sort: nil)
-                    self?.pageNumber += 1
-                })
+            
+            movieSearchService.getMovies(cancallebles: &cancellables, page: pageNumber, searchText: searchText.urlHostAllowedString()) { result in
+                self.activityIndAnimating = false
+                switch result {
+                case .success((let movies)):
+                    self.movies.append(contentsOf: movies)
+                    self.filteredMovies.append(contentsOf: movies)
+                    self.filterMovie(rating: self.filterOptions.0, sort: nil)
+                    self.pageNumber += 1
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         }
     }
 }

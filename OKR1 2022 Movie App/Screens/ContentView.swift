@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    private var service: NetworkService = NetworkManager().service
+    private var service: NetworkServiceProtocol = NetworkManager().service
     let coloredNavAppearance = UINavigationBarAppearance()
     @State private var selection = 0
     

@@ -15,20 +15,19 @@ class ViewModelHome : ObservableObject {
     @Published var trengingMovies: [MovieViewModel] = []
     @Published var topRatedMovies: [MovieViewModel] = []
     
+    private var service: NetworkServiceProtocol
+    private var cancellables = Set<AnyCancellable>()
     lazy private var genreService: GenreServicesProtocol = {
         let client = GenreServices(service: service)
         return client
     }()
     
-    lazy private var movieService: MovieServicesProtocol = {
+    lazy private var movieService: MovieListServiceProtocol = {
         let client = MovieServices(service: service)
         return client
     }()
     
-    private var service: NetworkService
-    private var cancellables = Set<AnyCancellable>()
-    
-    init(service: NetworkService) {
+    init(service: NetworkServiceProtocol) {
         self.service = service
     }
    

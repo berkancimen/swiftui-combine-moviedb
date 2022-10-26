@@ -12,7 +12,7 @@ struct MovieDetail: View {
     
     @StateObject private var viewModel: MovieDetailViewModel
     
-    init(service: NetworkService, movieId: Int) {
+    init(service: NetworkServiceProtocol, movieId: Int) {
         _viewModel = StateObject(wrappedValue: MovieDetailViewModel(service: service, movieId: movieId))
     }
     

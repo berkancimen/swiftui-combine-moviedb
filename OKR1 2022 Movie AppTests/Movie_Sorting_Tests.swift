@@ -11,7 +11,7 @@ import Combine
 
 class Movie_Sorting_Tests: XCTestCase {
     
-    let mockService: NetworkService = MockWebService()
+    let mockService: NetworkServiceProtocol = MockWebService()
     let sut = MovieSort()
     private var mockMovies: [MovieViewModel] = []
     private var cancallable: AnyCancellable?

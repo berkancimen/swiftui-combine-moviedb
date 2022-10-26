@@ -8,12 +8,12 @@
 import Foundation
 import Combine
 
-protocol NetworkService {
+protocol NetworkServiceProtocol {
     
     func fetch<T>(type: T.Type, url: EndPoints, page: Int?) -> AnyPublisher<T, Error> where T: Decodable
 }
 
-class Webservice: NetworkService {
+class Webservice: NetworkServiceProtocol {
     
     func fetch<T>(type: T.Type, url: EndPoints, page: Int?) -> AnyPublisher<T, Error> where T : Decodable {
         let urlString = url.url(page: page)

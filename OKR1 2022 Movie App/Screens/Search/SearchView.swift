@@ -11,7 +11,7 @@ struct SearchView: View {
     
     @ObservedObject private var viewModel: SearchViewModel
     
-    init(service: NetworkService) {
+    init(service: NetworkServiceProtocol) {
         _viewModel = ObservedObject(wrappedValue: SearchViewModel(service: service))
     }
 

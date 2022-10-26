@@ -12,41 +12,40 @@ class MovieListViewModel : ObservableObject {
     
     private var movies: [MovieViewModel] = []
     @Published var filteredMovies: [MovieViewModel] = []
-    @Published var screenName: String = "Movie Detail"
-    
-    private var service: NetworkService
+    @Published var screenName: String = ""
+        
+    private var service: NetworkServiceProtocol
     private var endPoint: EndPoints
     private var pageNumber: Int = 1
-    private var cancellable: AnyCancellable?
+    private var cancellables = Set<AnyCancellable>()
+    lazy private var movieService: MovieListServiceProtocol = {
+        let client = MovieServices(service: service)
+        return client
+    }()
     
-    let movieFilter = MovieFilter()
-    let sorting = MovieSort()
+    lazy var movieFilter = MovieFilter()
+    lazy var sorting = MovieSort()
     
     var filterOptions: (Ratings?, SortType?) = (nil, nil)
     
-    init(service: NetworkService, screenName: ScreenNames) {
+    init(service: NetworkServiceProtocol, screenName: ScreenNames) {
         self.service = service
         self.endPoint = screenName.getEndPoint()
         self.screenName = screenName.getScreenName()
     }
     
     func getMovies() {
-        
-        let response = service.fetch(type: MovieResponse.self, url: self.endPoint, page: pageNumber)
-        cancellable = response
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            }, receiveValue: { [weak self] in
-                self?.movies.append(contentsOf: $0.results.map(MovieViewModel.init))
-                self?.filteredMovies.append(contentsOf: $0.results.map(MovieViewModel.init))
-                self?.filterMovie(rating: self?.filterOptions.0, sort: nil)
-                self?.pageNumber += 1
-            })
+        movieService.getMovies(cancallebles: &cancellables, endPoint: endPoint, page: pageNumber) { result in
+            switch result {
+            case .success((let movies)):
+                self.movies.append(contentsOf: movies)
+                self.filteredMovies.append(contentsOf: movies)
+                self.filterMovie(rating: self.filterOptions.0, sort: nil)
+                self.pageNumber += 1
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func shouldLoadMore(movie : MovieViewModel) {

@@ -10,9 +10,9 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject private var viewModel: ViewModelHome
-    let service: NetworkService
+    let service: NetworkServiceProtocol
     
-    init(service: NetworkService) {
+    init(service: NetworkServiceProtocol) {
         self.service = service
         _viewModel = ObservedObject(wrappedValue: ViewModelHome(service: service))
     }
