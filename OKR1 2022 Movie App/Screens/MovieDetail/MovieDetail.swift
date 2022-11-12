@@ -118,7 +118,7 @@ struct MovieDetail: View {
                             
                             LazyVGrid(columns: columns, spacing: 10) {
                                 ForEach(viewModel.movieDetail.genres ?? [], id: \.id) { item in
-                                    HorizontalSliderCardView(nameAndId: (item.name, item.id), frame: (width: 120, height: 40))
+                                    HorizontalSliderCardView(nameAndId: (item.name, item.id), cardColor: Color.generateRandomColor(), frame: (width: 120, height: 40))
                                 }
                             }
                             .padding(.horizontal)

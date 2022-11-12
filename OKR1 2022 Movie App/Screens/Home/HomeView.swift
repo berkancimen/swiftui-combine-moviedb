@@ -32,7 +32,7 @@ struct HomeView: View {
                             HStack (spacing: 15) {
                                 ForEach(viewModel.genres, id: \.genreId) { item in
                                     NavigationLink(destination: MovieList(service: service, screenName: .genre(item.genreName, item.genreId))) {
-                                        HorizontalSliderCardView(nameAndId: (item.genreName, item.genreId))
+                                        HorizontalSliderCardView(nameAndId: (item.genreName, item.genreId), cardColor: Color.generateRandomColor())
                                     }
                                 }
                             }.padding([.leading, .trailing], 20)

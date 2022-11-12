@@ -10,7 +10,7 @@ import SwiftUI
 struct HorizontalSliderCardView: View {
     
     let nameAndId : (String, Int)
-    var cardColor : Color = Color.generateRandomColor()
+    var cardColor : Color = .blue
     var frame: (width: CGFloat, height: CGFloat) = (width: 140, height: 60)
     
     var body: some View {

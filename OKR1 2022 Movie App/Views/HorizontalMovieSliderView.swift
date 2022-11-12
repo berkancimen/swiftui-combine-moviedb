@@ -39,7 +39,7 @@ struct HorizontalMovieSliderView: View {
                 .frame(height: 1, alignment: .center)
                 .foregroundColor(.gray)
                 .padding([.leading, .trailing], 120)
-        }
+        }.background(Color("37_37_42"))
     }
     
     func getScale(proxy: GeometryProxy) -> CGFloat {
