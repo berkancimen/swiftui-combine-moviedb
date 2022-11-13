@@ -27,7 +27,4 @@ final class HorizontalMovieSliderViewSnapshotTests: XCTestCase {
           matching: view,
           as: .image(size: view.intrinsicContentSize))
     }
-    
-    
-
 }
