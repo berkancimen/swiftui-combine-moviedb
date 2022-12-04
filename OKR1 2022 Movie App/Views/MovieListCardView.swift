@@ -18,7 +18,7 @@ struct MovieListCardView: View {
                     .onSuccess { image, data, cacheType in
                     }
                     .resizable()
-                    .indicator(.activity)
+                  
                     .transition(.fade(duration: 0.5))
                     .frame(width: 100, height: 150, alignment: .center)
                     .background(LinearGradient(gradient: Gradient(colors: [.black, .gray, .white]), startPoint: .bottomTrailing, endPoint: .topLeading))

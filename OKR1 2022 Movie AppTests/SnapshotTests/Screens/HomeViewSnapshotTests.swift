@@ -14,7 +14,7 @@ final class HomeViewSnapshotTests: XCTestCase {
     
     func test_home_view() {
         let homeView = HomeView(service: MockWebService())
-        let viewController: UIViewController = UIHostingController(rootView: homeView)
+        let viewController: UIViewController = UIHostingController(rootView: homeView)        
         assertSnapshot(
             matching: viewController,
             as: .image(on: .iPhone8(.portrait)))

@@ -20,7 +20,7 @@ struct GridMovieCardView: View {
                 .onSuccess { image, data, cacheType in
             }
                 .resizable()
-                .indicator(.activity)
+              
                 .transition(.fade(duration: 0.5))
                 .frame(width: 130, height: 130, alignment: .center)
                 .background(LinearGradient(gradient: Gradient(colors: [.black, .gray, .white]), startPoint: .topLeading, endPoint: .bottomTrailing))

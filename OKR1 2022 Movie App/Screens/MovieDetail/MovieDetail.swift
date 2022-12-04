@@ -31,7 +31,7 @@ struct MovieDetail: View {
                         .onSuccess { image, data, cacheType in
                         }
                         .resizable()
-                        .indicator(.activity)
+                        
                         .transition(.fade(duration: 0.5))
                         .frame(maxWidth: .infinity)
                         .aspectRatio(10/15, contentMode: .fill)
