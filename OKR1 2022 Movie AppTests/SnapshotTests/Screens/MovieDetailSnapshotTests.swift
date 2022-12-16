@@ -14,6 +14,7 @@ final class MovieDetailSnapshotTests: XCTestCase {
     
     func test_movie_detail_view() {
         let movieDetailView = MovieDetail(service: MockWebService(), movieId: 675353)
+        movieDetailView.fetchMovieDetail()
         let viewController: UIViewController = UIHostingController(rootView: movieDetailView)
         assertSnapshot(
             matching: viewController,

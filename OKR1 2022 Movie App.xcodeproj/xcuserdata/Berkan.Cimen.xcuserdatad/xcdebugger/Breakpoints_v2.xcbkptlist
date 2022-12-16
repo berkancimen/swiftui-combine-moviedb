@@ -3,4 +3,414 @@
    uuid = "621F6828-A63B-42D4-AA29-913C735B0DBB"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F13A8EB-D956-4676-BCAA-EA3863EDF328"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Screens/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getGenres()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2F13A8EB-D956-4676-BCAA-EA3863EDF328 - f9e907ad349f9624"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_App.ViewModelHome.getGenres() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "2F13A8EB-D956-4676-BCAA-EA3863EDF328 - 2851d25d13cf23dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;OKR1_2022_Movie_App.GenresViewModel&gt;, Swift.Error&gt;) -&gt; () in OKR1_2022_Movie_App.ViewModelHome.getGenres() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "102">
+               </Location>
+               <Location
+                  uuid = "2F13A8EB-D956-4676-BCAA-EA3863EDF328 - 3e3c229e7640f5a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_AppTests.ViewModelHome.getGenres() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "2F13A8EB-D956-4676-BCAA-EA3863EDF328 - ada643306f880932"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;OKR1_2022_Movie_AppTests.GenresViewModel&gt;, Swift.Error&gt;) -&gt; () in OKR1_2022_Movie_AppTests.ViewModelHome.getGenres() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "102">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E25CF9A-6061-4427-8C5D-C2B93C85646D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Screens/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getPopularMovies()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0E25CF9A-6061-4427-8C5D-C2B93C85646D - 1ff272fe25874388"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_App.ViewModelHome.getPopularMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "0E25CF9A-6061-4427-8C5D-C2B93C85646D - 86c9b16cd905ab9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;OKR1_2022_Movie_App.MovieViewModel&gt;, Swift.Error&gt;) -&gt; () in OKR1_2022_Movie_App.ViewModelHome.getPopularMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "102">
+               </Location>
+               <Location
+                  uuid = "0E25CF9A-6061-4427-8C5D-C2B93C85646D - e9318a974aceeb18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_AppTests.ViewModelHome.getPopularMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "0E25CF9A-6061-4427-8C5D-C2B93C85646D - 296704598a4c38dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;OKR1_2022_Movie_AppTests.MovieViewModel&gt;, Swift.Error&gt;) -&gt; () in OKR1_2022_Movie_AppTests.ViewModelHome.getPopularMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "102">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4937461-827D-40D4-A80B-645EA1EA910B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Screens/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getGenres()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36D22DCE-E207-4D2C-9EDB-D6F31441707D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Screens/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "getTrendingMovies()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "36D22DCE-E207-4D2C-9EDB-D6F31441707D - 80fe6e92f0697ac4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_App.ViewModelHome.getTrendingMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "36D22DCE-E207-4D2C-9EDB-D6F31441707D - f6d589fc77f539a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;OKR1_2022_Movie_App.MovieViewModel&gt;, Swift.Error&gt;) -&gt; () in OKR1_2022_Movie_App.ViewModelHome.getTrendingMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "102">
+               </Location>
+               <Location
+                  uuid = "36D22DCE-E207-4D2C-9EDB-D6F31441707D - 74e98fc57ab25c74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_AppTests.ViewModelHome.getTrendingMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "36D22DCE-E207-4D2C-9EDB-D6F31441707D - dbd65442db1377c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;OKR1_2022_Movie_AppTests.MovieViewModel&gt;, Swift.Error&gt;) -&gt; () in OKR1_2022_Movie_AppTests.ViewModelHome.getTrendingMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "102">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7417A919-E892-48DD-9B81-5D0A72DBDDE8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Screens/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "getTopRatedMovies()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7417A919-E892-48DD-9B81-5D0A72DBDDE8 - 7b5e9482009a2ca1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_App.ViewModelHome.getTopRatedMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "7417A919-E892-48DD-9B81-5D0A72DBDDE8 - ec43b8ec425ec01"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;OKR1_2022_Movie_App.MovieViewModel&gt;, Swift.Error&gt;) -&gt; () in OKR1_2022_Movie_App.ViewModelHome.getTopRatedMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "102">
+               </Location>
+               <Location
+                  uuid = "7417A919-E892-48DD-9B81-5D0A72DBDDE8 - 82aa5f4a98d134b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OKR1_2022_Movie_AppTests.ViewModelHome.getTopRatedMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "7417A919-E892-48DD-9B81-5D0A72DBDDE8 - b413ccb97c652c73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;OKR1_2022_Movie_AppTests.MovieViewModel&gt;, Swift.Error&gt;) -&gt; () in OKR1_2022_Movie_AppTests.ViewModelHome.getTopRatedMovies() -&gt; ()"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "102">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4886F64A-C47C-40E2-9CC8-DE79DBCF6AAA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Screens/Home/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "4886F64A-C47C-40E2-9CC8-DE79DBCF6AAA - 73c037612cb1bdba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.ModifiedContent&lt;&lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.AccessibilityAttachmentModifier&gt;, SwiftUI.ModifiedContent&lt;&lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.AccessibilityAttachmentModifier&gt;, SwiftUI.ModifiedContent&lt;&lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.AccessibilityAttachmentModifier&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitle(_: SwiftUI.LocalizedStringKey, displayMode: SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.accentColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0 in OKR1_2022_Movie_App.HomeView.body.getter : some"
+                  moduleName = "OKR1 2022 Movie App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "75">
+               </Location>
+               <Location
+                  uuid = "4886F64A-C47C-40E2-9CC8-DE79DBCF6AAA - a2b534bc2c7b1a15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.ModifiedContent&lt;&lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.AccessibilityAttachmentModifier&gt;, SwiftUI.ModifiedContent&lt;&lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.AccessibilityAttachmentModifier&gt;, SwiftUI.ModifiedContent&lt;&lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.AccessibilityAttachmentModifier&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitle(_: SwiftUI.LocalizedStringKey, displayMode: SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.accentColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0 in OKR1_2022_Movie_AppTests.HomeView.body.getter : some"
+                  moduleName = "OKR1 2022 Movie AppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Berkan.Cimen/Documents/other%20projects/swiftui-combine-moviedb/swiftui-combine-moviedb/OKR1%202022%20Movie%20App/Screens/Home/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "75">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "529C62F2-B6B2-45C0-A675-B24F567AB9E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie AppTests/SnapshotTests/Components/HomeHeaderViewSnapshotTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "HomeHeaderViewSnapshotTests"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "402E08A6-CF8C-4698-A265-59D2896B8162"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OKR1 2022 Movie App/Screens/MovieDetail/MovieDetail.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "init(service:movieId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

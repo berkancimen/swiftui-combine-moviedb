@@ -133,10 +133,17 @@ struct MovieDetail: View {
             .frame(maxWidth: .infinity)
             .navigationTitle(viewModel.movieDetail.name)
             .task({
-                viewModel.getMovieDetail()
+                fetchMovieDetail()
             })
         }
         
+    }
+}
+
+extension MovieDetail {
+    
+    func fetchMovieDetail() {
+        viewModel.getMovieDetail()
     }
 }
 

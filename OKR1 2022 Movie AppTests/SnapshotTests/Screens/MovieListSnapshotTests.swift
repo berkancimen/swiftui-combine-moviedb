@@ -14,6 +14,7 @@ final class MovieListSnapshotTests: XCTestCase {
 
     func test_movie_list_view() {
         let movieListView = MovieList(service: MockWebService(), screenName: .popular)
+        movieListView.fetchMovieList()
         let viewController: UIViewController = UIHostingController(rootView: movieListView)
         assertSnapshot(
             matching: viewController,

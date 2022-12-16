@@ -25,7 +25,7 @@ struct MovieList: View {
             }
         }
         .onAppear(perform: {
-            viewModel.getMovies()
+            fetchMovieList()
         })
         .background(Color("37_37_42"))
         .navigationTitle(viewModel.screenName)
@@ -44,6 +44,13 @@ struct MovieList: View {
         } 
     }
     
+}
+
+extension MovieList {
+    
+    func fetchMovieList() {
+        viewModel.getMovies()
+    }
 }
 
 struct MovieList_Previews: PreviewProvider {

@@ -26,7 +26,7 @@ struct SearchView: View {
                         SearchTextField(textFieldText: $textFieldText)
                         CustomButtonView(completion: {
                             Task {
-                                viewModel.getMovies(textFieldText)
+                                fetchSearchMovie()
                             }
                         }, title: "Search", backgroundColor: Color(hue: 0.537, saturation: 0.991, brightness: 0.602), cornerRadius: 12, isAnimating: self.$viewModel.activityIndAnimating)
                             .padding(.trailing, 8)
@@ -61,6 +61,13 @@ struct SearchView: View {
                 .padding(.leading)
                 .padding(.top, 5)
         }
+    }
+}
+
+extension SearchView {
+    
+    func fetchSearchMovie() {
+        viewModel.getMovies(textFieldText)
     }
 }
 

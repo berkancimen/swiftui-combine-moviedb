@@ -14,6 +14,7 @@ final class SearchViewSnapshotTests: XCTestCase {
 
     func test_search_view() {
         let searchView = SearchView(service: MockWebService())
+        searchView.fetchSearchMovie()
         let viewController: UIViewController = UIHostingController(rootView: searchView)
         assertSnapshot(
             matching: viewController,

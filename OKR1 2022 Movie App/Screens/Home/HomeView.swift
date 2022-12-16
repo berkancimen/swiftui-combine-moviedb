@@ -42,21 +42,21 @@ struct HomeView: View {
                             .foregroundColor(.gray)
                             .padding([.leading, .trailing], 120)
                     }.task({
-                        viewModel.getGenres()
+                        fetchGenres()
                     })
                     
                     // POPULAR MOVIES
                     HorizontalMovieSliderView(movies: $viewModel.popularMovies, sliderType: .popular).task({
-                        viewModel.getPopularMovies()
+                        fetchPopularMovies()
                     }).accessibilityIdentifier("PopularMoviesSlider")
                     // Trending MOVIES
                     HorizontalMovieSliderView(movies: $viewModel.trengingMovies, sliderType: .trending).task({
-                        viewModel.getTrendingMovies()
+                        fetchTrendingMovies()
                     }).accessibilityIdentifier("TrendingMoviesSlider")
                     
                     // Top Rated MOVIES
                     HorizontalMovieSliderView(movies: $viewModel.topRatedMovies, sliderType: .topRated).task({
-                        viewModel.getTopRatedMovies()
+                        fetchTopRatedMovies()
                     }).accessibilityIdentifier("TopRatedMoviesSlider")
                     
                 }
@@ -64,6 +64,25 @@ struct HomeView: View {
                 .navigationBarTitle("Home", displayMode: .inline)
             }.accentColor(.white)
         }
+    }    
+}
+
+extension HomeView {
+    
+    func fetchGenres() {
+        viewModel.getGenres()
+    }
+    
+    func fetchTrendingMovies() {
+        viewModel.getTrendingMovies()
+    }
+    
+    func fetchTopRatedMovies() {
+        viewModel.getTopRatedMovies()
+    }
+    
+    func fetchPopularMovies() {
+        viewModel.getPopularMovies()
     }
 }
 
